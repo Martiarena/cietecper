@@ -15,7 +15,7 @@
 	</div>
 	<div id="content" class="c-login clearfix">
 		<div class="header" style="height:auto;">
-			<a href="index.php"><img src="images/meta/<?php echo $xLogo; ?>"></a>
+			<a href="index.php"><img src="images/administrador.png"></a>
 		</div>
 		<div class="breadcrumbs">
 			<i class="fa fa-key"></i> Login

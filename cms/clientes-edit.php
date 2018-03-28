@@ -1,7 +1,7 @@
 <?php include "modulos/conexion.php"; ?>
 <?php include "modulos/verificar.php"; ?>
 <?php
-$cod_cliente		= $_REQUEST['cod_cliente'];
+$cod_cliente	= $_REQUEST['cod_cliente'];
 if (isset($_REQUEST['proceso'])) {
 	$proceso 	= $_POST['proceso'];
 } else {
@@ -17,7 +17,6 @@ if($proceso == ""){
 	$telefono			= $filaCli['telefono'];
 	$email				= $filaCli['email'];
 	$clave 				= $filaCli['clave'];
-	$empresa 			= htmlspecialchars(utf8_encode($filaCli['empresa']));
 	$fecha_nacimiento 	= $filaCli['fecha_nacimiento'];
 	$sexo				= $filaCli['sexo'];
 	$estado				= $filaCli['estado'];
@@ -30,11 +29,10 @@ if($proceso=="Actualizar"){
 	$telefono			= $_POST['telefono'];
 	$email				= $_POST['email'];
 	$clave				= $_POST['clave'];
-	$empresa			= mysqli_real_escape_string($enlaces, utf8_decode($_POST['empresa']));
 	$fecha_nacimiento	= $_POST['fecha_nacimiento'];
 	$sexo				= $_POST['sexo'];
 	$estado				= $_POST['estado'];
-	$actualizarClientes	= "UPDATE clientes SET cod_cliente='$cod_cliente', nombres='$nombres', direccion='$direccion', telefono='$telefono', email='$email', clave='$clave', empresa='$empresa', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo', estado='$estado' WHERE cod_cliente='$cod_cliente'";
+	$actualizarClientes	= "UPDATE clientes SET cod_cliente='$cod_cliente', nombres='$nombres', direccion='$direccion', telefono='$telefono', email='$email', clave='$clave', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo', estado='$estado' WHERE cod_cliente='$cod_cliente'";
 	$resultadoActualizar = mysqli_query($enlaces,$actualizarClientes) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	header("Location:clientes.php");
 }
@@ -87,7 +85,7 @@ if($proceso=="Actualizar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php") ?>
+        <?php $menu = "clientes"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Página de Inicio</h1>
@@ -146,14 +144,6 @@ if($proceso=="Actualizar"){
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="clave" type="password" id="clave" value="<?php echo $clave; ?>" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Empresa:</label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <input name="empresa" type="text" id="empresa" value="<?php echo $empresa; ?>" />
                                         </div>
                                     </div>
                                     <div class="row">

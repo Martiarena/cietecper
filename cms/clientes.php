@@ -78,7 +78,7 @@ if ($eliminar == "true") {
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php") ?>
+        <?php $menu = "clientes"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
             	<h1 class="page-title">Clientes</h1>

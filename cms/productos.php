@@ -36,15 +36,12 @@ if ($eliminar == "true") {
 	<?php include("includes/head.php") ?>
     <style>
 		@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
-			td:nth-of-type(1):before { content: "Nº"; }
-			td:nth-of-type(2):before { content: "Categoria"; }
-			td:nth-of-type(3):before { content: "Sub-categoria"; }
-			td:nth-of-type(4):before { content: "Producto"; }
-			td:nth-of-type(5):before { content: "Imagen"; }
-			td:nth-of-type(6):before { content: "Adjuntos"; }
-			td:nth-of-type(7):before { content: ""; }
-			td:nth-of-type(8):before { content: ""; }
-			td:nth-of-type(9):before { content: ""; }
+			td:nth-of-type(1):before { content: "Curso"; }
+			td:nth-of-type(2):before { content: "Imagen"; }
+			td:nth-of-type(3):before { content: "Adjunto"; }
+			td:nth-of-type(4):before { content: ""; }
+			td:nth-of-type(5):before { content: ""; }
+			td:nth-of-type(6):before { content: ""; }
 		}
 	</style>
     <script>

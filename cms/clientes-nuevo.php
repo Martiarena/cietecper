@@ -13,7 +13,6 @@ if($proceso == "Registrar"){
 	$telefono			= $_POST['telefono'];
 	$email				= mysqli_real_escape_string($enlaces, $_POST['email']);
 	$clave				= $_POST['clave'];
-	$empresa			= mysqli_real_escape_string($enlaces, utf8_decode($_POST['empresa']));
 	$fecha				= $_POST['fecha_nacimiento'];
 	$sexo				= $_POST['sexo'];
 	$estado				= $_POST['estado'];
@@ -23,7 +22,7 @@ if($proceso == "Registrar"){
 	$numreg = mysqli_num_rows($ejecutarValidar);
 	
 	if($numreg==0){
-		$insertarClientes = "INSERT INTO clientes(nombres, direccion, telefono, email, clave, empresa, fecha_nacimiento, sexo, estado)VALUE('$nombres', '$direccion', '$telefono', '$email', '$clave', '$empresa', '$fecha', '$sexo', '$estado')";
+		$insertarClientes = "INSERT INTO clientes(nombres, direccion, telefono, email, clave, fecha_nacimiento, sexo, estado)VALUE('$nombres', '$direccion', '$telefono', '$email', '$clave', '$fecha', '$sexo', '$estado')";
 		$resultadoInsertar = mysqli_query($enlaces,$insertarClientes);
 		$mensaje = "<div class='alert alert-success' role='alert'>
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -85,7 +84,7 @@ if($proceso == "Registrar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php") ?>
+        <?php $menu = "clientes"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Clientes</h1>
@@ -143,14 +142,6 @@ if($proceso == "Registrar"){
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="clave" type="password" id="clave" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Empresa:</label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <input name="empresa" type="text" id="empresa" />
                                         </div>
                                     </div>
                                     <div class="row">

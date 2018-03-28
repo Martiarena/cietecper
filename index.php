@@ -100,12 +100,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div id="blog" data-animated="0">
-						<div class="row">
-							<div class="col-md-10">
+						<div class="">
+							<div class="col-md-12">
 								<h3 class="titulo">Artículos de Reflexión</h3>
-							</div>
-							<div class="col-md-2">
-								<a class="btn-todos" href="articulos.php">Ver todos &raquo;</a>
 							</div>
 						</div>
 						<div id="m-blog" class="owl-carousel owl-theme">
@@ -190,24 +187,21 @@
 					</div>
 				</div>
 			</div>
-
+-->
 			
 			<div class="row">
 				<div class="col-md-12">
 					<div class="col-md-12" id="m-products" data-animated="0">
 						<div class="row">
-							<div class="col-md-10">
+							<div class="col-md-12">
 								<h3 class="titulo">Cursos y Capacitaciones</h3>
-							</div>
-							<div class="col-md-2">
-								<a class="btn-todos" href="#">Ver todos &raquo;</a>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-4">
 								<div class="product-wrap">
 									<div class="pw-price">$152.00</div>
-									<img src="img/products/1.jpg" class="img-responsive" alt=""/>
+									<img src="http://lorempixel.com/240/200" class="img-responsive" alt=""/>
 									<div class="pw-inner">
 										<h4>In scelerisque nibha</h4>
 										<ul>
@@ -221,7 +215,7 @@
 							<div class="col-md-4">
 								<div class="product-wrap">
 									<div class="pw-price">$170.00</div>
-									<img src="img/products/2.jpg" class="img-responsive" alt=""/>
+									<img src="http://lorempixel.com/240/200" class="img-responsive" alt=""/>
 									<div class="pw-inner">
 										<h4>Vitae lectus dapibus</h4>
 										<ul>
@@ -235,7 +229,7 @@
 							<div class="col-md-4">
 								<div class="product-wrap">
 									<div class="pw-price">$259.99</div>
-									<img src="img/products/3.jpg" class="img-responsive" alt=""/>
+									<img src="http://lorempixel.com/240/200" class="img-responsive" alt=""/>
 									<div class="pw-inner">
 										<h4>Nullam consequat erat</h4>
 										<ul>
@@ -248,7 +242,8 @@
 						</div>
 					</div>
 				</div>
-			</div> 
+			</div>
+<!-- 
 			<div class="row">
 				<div class="col-md-12">
 					<div class="col-md-12" id="icons-wrap" data-animated="0">

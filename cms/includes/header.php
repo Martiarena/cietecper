@@ -34,24 +34,14 @@
 					</ul>
 				</li>
 				<li class="<?php echo ($menu == "articulos" ? "active" : "")?>"><a href="articulos.php"><i class="fa fa-newspaper-o"></i> Art&iacute;culos</a></li>
-				<!-- 
-				<li class="collapsible">
-					<a href="#" onclick="return false;"><i class="fa fa-folder"></i> Portafolio</a>
-                    <ul class="sub-menu">
-						<li><a href="portafolio-categorias.php"><i class="fa fa-window-restore"></i> Categor&iacute;as</a></li>
-						<li><a href="portafolio.php"><i class="fa fa-folder-open"></i> Trabajos</a></li>
-						<li><a href="portafolio-galerias.php"><i class="fa fa-picture-o"></i> Fotos</a></li>
-					</ul>
-                </li>
-            	
-				<li class="collapsible">
+				<li class="<?php echo ($menu == "cursos" ? "active open" : "")?> collapsible">
 					<a href="#" onclick="return false;"><i class="fa fa-cube"></i> Cursos</a>
                     <ul class="sub-menu">
 						<li><a href="productos.php"><i class="fa fa-cube"></i> Cursos</a></li>
-						<li><a href="pedidos.php"><i class="fa fa-shopping-cart"></i> Registrados</a></li>
+						<li class="<?php echo ($page == "pagados" ? "activo" : "")?>"><a href="pedidos.php"><i class="fa fa-shopping-cart"></i> Cursos Pagados</a></li>
 					</ul>
                 </li>
-				<li><a href="clientes.php"><i class="fa fa-users"></i> Clientes</a></li> -->
+				<li class="<?php echo ($menu == "clientes" ? "active" : "")?>"><a href="clientes.php"><i class="fa fa-users"></i> Clientes</a></li>
 				<li class="<?php echo ($menu == "contacto" ? "active" : "")?>"><a href="contacto.php"><i class="fa fa-map-marker"></i> Contacto</a></li>
 				<li class="<?php echo ($menu == "social" ? "active" : "")?>"><a href="social.php"><i class="fa fa-share-alt"></i> Redes Sociales</a></li>
 			</ul>

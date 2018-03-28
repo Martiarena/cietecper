@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php $num = 0; ?>
 	<?php include("includes/head.php") ?>
     <style>
 		@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
@@ -24,16 +25,16 @@
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php") ?>
+        <?php $menu = "cursos"; $page = "pagados"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
-            	<h1 class="page-title">Productos</h1>
+            	<h1 class="page-title">Cursos</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-cube"></i> Productos <i class="fa fa-caret-right"></i> Pedidos
+				<i class="fa fa-cube"></i> Cursos <i class="fa fa-caret-right"></i> Pagados
 			</div>
 			<div class="wrp clearfix">
-            	<?php $page = "pedidos"; include("includes/menu-productos.php"); ?>
+            	<?php  include("includes/menu-productos.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">

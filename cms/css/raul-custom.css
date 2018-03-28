@@ -229,7 +229,9 @@ label span {
     margin: 0px;
 }
 
-
+.TableTools {
+    display: none;
+}
 
 @media only screen and (max-width:1199px){
 

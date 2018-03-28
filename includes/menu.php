@@ -21,7 +21,7 @@
 						</p>
 					</div>
 					<div class="col-md-6 text-right">
-						<!-- <p><span><i class="fa fa-user"></i> <a href="#">Login</a></span> | <span><i class="fa fa-plus-circle"></i> <a href="#">Registrarse</a></span></p> -->
+						<p><span><i class="fa fa-user"></i> <a href="#">Login</a></span> | <span><i class="fa fa-plus-circle"></i> <a href="#">Registrarse</a></span></p>
 					</div>
 				</div>
 			</div>
@@ -47,8 +47,8 @@
 						<ul class="nav navbar-nav navbar-right menu-effect">
 							<li class="<?php echo ($page == "inicio" ? "current" : "")?>"><a href="index.php" data-hover="Inicio">Inicio</a></li>
 							<li class="<?php echo ($page == "articulos" ? "current" : "")?>"><a href="articulos.php" data-hover="Art&iacute;culos">Artículos</a></li>
-							<!-- <li><a href="#" data-hover="Asesor&iacute;a&nbsp;y&nbsp;Consultor&iacute;a">Asesor&iacute;a y Consultor&iacute;a</a></li>
-							<li><a href="#" data-hover="Cursos">Cursos</a></li>-->
+							<li><a href="#" data-hover="Asesor&iacute;a&nbsp;y&nbsp;Consultor&iacute;a">Asesor&iacute;a y Consultor&iacute;a</a></li>
+							<li><a href="cursos.php" data-hover="Cursos">Cursos</a></li>
 							<li class="<?php echo ($page == "contacto" ? "current" : "")?>"><a href="contacto.php" data-hover="Contacto">Contacto</a></li>
 						</ul>
 					</div>
@@ -70,7 +70,7 @@
 							mysqli_free_result($resultadoSol);
 						?>
 					</ul>
-					<p class="mh-copy">&copy; 2017 Ciencia y Tecnolog&iacute;a</p>
+					<p class="mh-copy">&copy; 2018 Ciencia y Tecnolog&iacute;a</p>
 				</div>
 				<div class="m-hide"><i class="fa fa-plus-circle"></i></div>
 				<!-- Hidden Content -->
