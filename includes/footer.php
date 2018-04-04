@@ -18,6 +18,7 @@
 			<script src="js/jquery.nicescroll.js"></script>
 			<script src="js/contact.js"></script>
 			<script src="js/main.js"></script>
+			<script src="js/script.js"></script>
 
 			<!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 			<script src="js/gmaps.js"></script>-->

@@ -9,14 +9,12 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
 	$titulo				= mysqli_real_escape_string($enlaces, $_POST['titulo']);
-	$categoria			= mysqli_real_escape_string($enlaces, $_POST['categoria']);
 	$imagen				= $_POST['imagen'];
 	$descripcion		= mysqli_real_escape_string($enlaces, $_POST['descripcion']);
-	$autor				= mysqli_real_escape_string($enlaces, $_POST['autor']);
 	$fecha				= $_POST['fecha'];
 	$estado				= $_POST['estado'];
 		
-	$insertararticulo = "INSERT INTO articulos(titulo, categoria, imagen, descripcion, autor, fecha, estado)VALUE('$titulo', '$categoria', '$imagen', '$descripcion', '$autor', '$fecha', '$estado')";
+	$insertararticulo = "INSERT INTO articulos(titulo, imagen, descripcion, fecha, estado)VALUE('$titulo', '$imagen', '$descripcion', '$fecha', '$estado')";
 	$resultadoInsertar = mysqli_query($enlaces,$insertararticulo);
 	$mensaje = "<div class='alert alert-success' role='alert'>
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -85,14 +83,6 @@ if($proceso == "Registrar"){
                                         </div>
                                     </div>
                                     <div class="row">
-                                    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label><strong>Categor&iacute;a:</strong></label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        	<input name="categoria" type="text" id="categoria" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <label><strong>Imagen:</strong><br><span>(-px x -px)</span></label>
                                         </div>
@@ -116,14 +106,6 @@ if($proceso == "Registrar"){
                                         </div>
                                     </div>
                                     <div class="separador-20"></div>
-                                    <div class="row">
-                                    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label><strong>Autor: *</strong></label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        	<input name="autor" type="text" id="autor" />
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         	<label><strong>Estado:</strong></label>

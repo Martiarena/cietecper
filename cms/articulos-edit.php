@@ -14,20 +14,16 @@ if($proceso == ""){
 	$cod_articulo	= $filaArt['cod_articulo'];
 	$imagen 		= $filaArt['imagen'];
 	$titulo			= htmlspecialchars($filaArt['titulo']);
-	$categoria		= htmlspecialchars($filaArt['categoria']);
 	$descripcion	= htmlspecialchars($filaArt['descripcion']);
-	$autor			= htmlspecialchars($filaArt['autor']);
 	$estado 		= $filaArt['estado'];
 }
 if($proceso=="Actualizar"){	
 	$cod_articulo			= $_POST['cod_articulo'];
 	$imagen					= $_POST['imagen'];
 	$titulo					= mysqli_real_escape_string($enlaces, $_POST['titulo']);
-	$categoria				= mysqli_real_escape_string($enlaces, $_POST['categoria']);
 	$descripcion			= mysqli_real_escape_string($enlaces, $_POST['descripcion']);
-	$autor					= mysqli_real_escape_string($enlaces, $_POST['autor']);
 	$estado					= $_POST['estado'];
-	$actualizararticulos	= "UPDATE articulos SET cod_articulo='$cod_articulo', imagen='$imagen', titulo='$titulo', categoria='$categoria', descripcion='$descripcion', autor='$autor', estado='$estado' WHERE cod_articulo='$cod_articulo'";
+	$actualizararticulos	= "UPDATE articulos SET cod_articulo='$cod_articulo', imagen='$imagen', titulo='$titulo', descripcion='$descripcion', estado='$estado' WHERE cod_articulo='$cod_articulo'";
 	$resultadoActualizar 	= mysqli_query($enlaces,$actualizararticulos) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	header("Location:articulos.php");
 }
@@ -43,11 +39,6 @@ if($proceso=="Actualizar"){
 			if(document.fcms.titulo.value==""){
 				alert("Debe escribir un título");
 				document.fcms.titulo.focus();
-				return;	
-			}
-			if(document.fcms.autor.value==""){
-				alert("Debe escribir un autor");
-				document.fcms.autor.focus();
 				return;	
 			}
 			document.fcms.action = "articulos-edit.php";
@@ -102,14 +93,6 @@ if($proceso=="Actualizar"){
                                         </div>
                                     </div>
                                     <div class="row">
-                                    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label><strong>Categor&iacute;a:</strong></label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        	<input name="categoria" type="text" id="categoria" value="<?php echo $categoria; ?>" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <label><strong>Imagen:</strong><br><span>(780px x 420px)</span></label>
                                         </div>
@@ -148,14 +131,6 @@ if($proceso=="Actualizar"){
                                         </div>
                                     </div>
                                     <div class="separador-20"></div>
-                                    <div class="row">
-                                    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label><strong>Autor: *</strong></label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        	<input name="autor" type="text" id="autor" value="<?php echo $autor; ?>" />
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         	<div class="btn-group">

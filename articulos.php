@@ -20,7 +20,7 @@
 						<h3><span>Art&iacute;culos</span></h3>
 						<ul class="bread_crumbs">
 							<li><a href="index.php">Inicio</a></li>
-							<li>Art&iacute;culos</li>
+							<li><strong>Art&iacute;culos</strong></li>
 						</ul>
 					</div>
 				</div>
@@ -51,10 +51,8 @@
 			    				while($filaArt = mysqli_fetch_array($resultadoarticulos)){
 			        				$xCodigoA		= $filaArt['cod_articulo'];
 									$xTitulo		= $filaArt['titulo'];
-									$xCategoria		= $filaArt['categoria'];
 			                       	$xImagen		= $filaArt['imagen'];
 			                       	$xDescripcion	= $filaArt['descripcion'];
-			                       	$xAutor			= $filaArt['autor'];
 			                       	$xFecha			= $filaArt['fecha'];
 							?>
 							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" data-animated="0">
@@ -78,10 +76,6 @@
 									<h4><a href="articulo.php?cod_articulo=<?php echo $xCodigoA; ?>"><?php 
 										$strCut = substr($xTitulo,0,72);
 										echo strip_tags($strCut); ?></a></h4>
-									<div class="blog-meta">
-										<?php if (!empty($xCategoria)) { ?><span><i class="fa fa-book"></i> <?php echo $xCategoria; ?></span><?php } ?>
-										<span><i class="fa fa-user"></i> <?php echo $xAutor; ?></span>
-									</div>
 									<p class="text-justify"><?php 
 										$strCut = substr($xDescripcion,0,170);
 										$xDescripcion = substr($strCut,0,strrpos($strCut, ' ')).'...';

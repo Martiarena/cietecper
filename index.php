@@ -112,10 +112,8 @@
 			                    while($filaArt = mysqli_fetch_array($resultadoarticulos)){
 			                        $xCodigoA		= $filaArt['cod_articulo'];
 									$xTitulo		= $filaArt['titulo'];
-									$xCategoria		= $filaArt['categoria'];
 			                        $xImagen		= $filaArt['imagen'];
 			                        $xDescripcion	= $filaArt['descripcion'];
-			                        $xAutor			= $filaArt['autor'];
 			                        $xFecha			= $filaArt['fecha'];
 							?>
 							<div class="item">
@@ -134,10 +132,7 @@
 								<h4><a href="articulo.php?cod_articulo=<?php echo $xCodigoA; ?>"><?php 
 										$strCut = substr($xTitulo,0,72);
 										echo strip_tags($strCut); ?></a></h4>
-								<div class="blog-meta">
-									<?php if (!empty($xCategoria)) { ?><span><i class="fa fa-book"></i> <?php echo $xCategoria; ?></span><?php } ?>
-									<span><i class="fa fa-user"></i> <?php echo $xAutor; ?></span>
-								</div>
+
 								<p class="text-justify"><?php 
 									$strCut = substr($xDescripcion,0,170);
 									$xDescripcion = substr($strCut,0,strrpos($strCut, ' ')).'...';
@@ -203,7 +198,7 @@
 									<div class="pw-price">$152.00</div>
 									<img src="http://lorempixel.com/240/200" class="img-responsive" alt=""/>
 									<div class="pw-inner">
-										<h4>In scelerisque nibha</h4>
+										<h4>Curso #1</h4>
 										<ul>
 											<li><a href="#"><span><i class="fa fa-search"></i></span></a></li>
 											<li><a href="#"><span><i class="fa fa-shopping-cart"></i></span></a></li>
@@ -217,7 +212,7 @@
 									<div class="pw-price">$170.00</div>
 									<img src="http://lorempixel.com/240/200" class="img-responsive" alt=""/>
 									<div class="pw-inner">
-										<h4>Vitae lectus dapibus</h4>
+										<h4>Curso #2</h4>
 										<ul>
 											<li><a href="#"><span><i class="fa fa-search"></i></span></a></li>
 											<li><a href="#"><span><i class="fa fa-shopping-cart"></i></span></a></li>
@@ -231,7 +226,7 @@
 									<div class="pw-price">$259.99</div>
 									<img src="http://lorempixel.com/240/200" class="img-responsive" alt=""/>
 									<div class="pw-inner">
-										<h4>Nullam consequat erat</h4>
+										<h4>Curso #3</h4>
 										<ul>
 											<li><a href="#"><span><i class="fa fa-search"></i></span></a></li>
 											<li><a href="#"><span><i class="fa fa-shopping-cart"></i></span></a></li>
