@@ -68,7 +68,7 @@ if($proceso == "Actualizar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "contacto"; include("includes/header.php"); ?>
+        <?php $menu = "contacto"; $page = "contacto"; include("includes/header.php"); ?>
 		<div id="content" class="clearfix">
 			<div class="header">
 				<h1 class="page-title">Contacto</h1>
@@ -77,6 +77,7 @@ if($proceso == "Actualizar"){
 				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Editar datos de contacto
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "contacto"; include("includes/menu-contacto.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">

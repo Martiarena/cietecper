@@ -9,7 +9,7 @@
 								<span><i class="fa fa-user"></i></span>
 							</div>
 							<div class="mc-email">
-								<input type="password" name="password" id="Password" placeholder="Password" Required>
+								<input type="password" name="password" id="password" placeholder="Password" Required>
 								<span><i class="fa fa-key"></i></span>
 							</div>
 						</div>

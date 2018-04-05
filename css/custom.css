@@ -318,7 +318,7 @@ h3.titulo {
   font-size: 14px;
   color: #FFF;
   position: relative;
-  font-weight: 300;
+  font-weight: 700;
   border: 1px solid #6ec800;
   text-transform: uppercase;
 }
@@ -326,20 +326,22 @@ h3.titulo {
 .btn_green:hover{
   background: #fff;
   color: #000;
-  font-weight: 700;
   border: 1px solid #fff;
 }
 
 .btn-limpiar {
   color: #6ec800;
+  font-weight: 700;
   border: 1px solid #6ec800;
   background-color: transparent;
   padding: 9px 15px;
+  text-transform: uppercase;
 }
 
 .btn-limpiar:hover {
-  background-color: #6ec800;
-  color: #fff;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #000;
 }
 
 

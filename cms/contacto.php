@@ -15,15 +15,16 @@
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "contacto"; include("includes/header.php") ?>
+        <?php $menu = "contacto"; $page = "contacto"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Contacto</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Contacto
+				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Datos de Contacto
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "contacto"; include("includes/menu-contacto.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">

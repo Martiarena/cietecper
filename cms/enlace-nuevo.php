@@ -10,17 +10,18 @@ if (isset($_REQUEST['proceso'])) {
 if($proceso == "Registrar"){
 	$titulo				= $_POST['titulo'];
 	$descripcion		= $_POST['descripcion'];
+	$enlace				= $_POST['enlace'];
 	if(isset($_POST['orden'])){
 		$orden			= $_POST['orden'];
 	}else{
 		$orden			= '0';
 	}
 	$estado				= $_POST['estado'];
-	$insertargeneralidades = "INSERT INTO generalidades(titulo, descripcion, orden, estado)VALUE('$titulo', '$descripcion', '$orden', '$estado')";
+	$insertargeneralidades = "INSERT INTO enlaces(titulo, descripcion, enlace, orden, estado)VALUE('$titulo', '$descripcion', '$enlace', '$orden', '$estado')";
 	$resultadoInsertar = mysqli_query($enlaces,$insertargeneralidades);
 	$mensaje = "<div class='alert alert-success' role='alert'>
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-					<p><strong>Nota:</strong> La generalidad se registr&oacute; exitosamente. <a href='generalidades.php'>Ir a generalidades</a></p>
+					<p><strong>Nota:</strong> El enlace se registr&oacute; exitosamente. <a href='enlaces.php'>Ir a Enlaces de Inter&eacute;s</a></p>
                 </div>";
 }
 ?>
@@ -35,7 +36,11 @@ if($proceso == "Registrar"){
 				alert("Debe escribir un título");
 				return;	
 			}
-			document.fcms.action = "generalidad-nueva.php";
+			if(document.fcms.enlace.value==""){
+				alert("Debe escribir un enlace");
+				return;	
+			}
+			document.fcms.action = "enlace-nuevo.php";
 			document.fcms.proceso.value="Registrar";
 			document.fcms.submit();
 		}
@@ -55,21 +60,21 @@ if($proceso == "Registrar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "inicio"; $page = "generalidades"; include("includes/header.php") ?>
+        <?php $menu = "contacto"; $page = "enlaces"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
-				<h1 class="page-title">Página de Inicio</h1>
+				<h1 class="page-title">Datos de Contacto</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Inicio <i class="fa fa-caret-right"></i> Generalidades <i class="fa fa-caret-right"></i> Nueva generalidad
+				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Enlaces de Inter&eacute;s <i class="fa fa-caret-right"></i> Nuevo enlace
 			</div>
 			<div class="wrp clearfix">
-            	<?php $page="generalidades"; include("includes/menu-inicio.php"); ?>
+            	<?php $page="enlaces"; include("includes/menu-contacto.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
 							<div class="widget-title">
-								<i class="fa fa-th"></i> <strong>Registrar Nueva titulo</strong>
+								<i class="fa fa-th"></i> <strong>Registrar Nuevo enlace</strong>
 							</div>
 						</div>
 						<div class="widget-content">
@@ -80,7 +85,7 @@ if($proceso == "Registrar"){
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <label><strong>T&iacute;tulo: *</strong></label>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="titulo" type="text" id="titulo" />
                                         </div>
                                     </div>
@@ -88,14 +93,18 @@ if($proceso == "Registrar"){
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <label><strong>Descripci&oacute;n:</strong></label>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<textarea name="descripcion" id="descripcion"></textarea>
-                                            <script>
-												CKEDITOR.replace('descripcion');
-											</script>
                                         </div>
                                     </div>
-                                    <div class="separador-20"></div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                            <label><strong>Enlace: *<br><span>(ejemplo: www.enlace.com)</span></strong></label>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                            <input name="enlace" type="text" id="enlace" />
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         	<label><strong>Orden:</strong></label>
@@ -119,8 +128,8 @@ if($proceso == "Registrar"){
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         	<div class="btn-group">
-                                            	<a href="generalidades.php" class="btn btn-pink"><i class="fa fa-times"></i> Cancelar</a>
-                                                <button class="btn btn-blue" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Imagen</button>
+                                            	<a href="enlaces.php" class="btn btn-pink"><i class="fa fa-times"></i> Cancelar</a>
+                                                <button class="btn btn-blue" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Enlace</button>
 											</div>
 							                <input type="hidden" name="proceso">
                                         </div>

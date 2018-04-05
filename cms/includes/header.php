@@ -37,12 +37,19 @@
 				<li class="<?php echo ($menu == "cursos" ? "active open" : "")?> collapsible">
 					<a href="#" onclick="return false;"><i class="fa fa-cube"></i> Cursos</a>
                     <ul class="sub-menu">
-						<li><a href="productos.php"><i class="fa fa-cube"></i> Cursos</a></li>
-						<li class="<?php echo ($page == "pagados" ? "activo" : "")?>"><a href="pedidos.php"><i class="fa fa-shopping-cart"></i> Cursos Pagados</a></li>
+						<li class="<?php echo ($page == "cursos" ? "activo" : "")?>"><a href="cursos.php"><i class="fa fa-cube"></i> Cursos</a></li>
+						<li class="<?php echo ($page == "pedidos" ? "activo" : "")?>"><a href="pedidos.php"><i class="fa fa-shopping-cart"></i> Pedidos</a></li>
 					</ul>
                 </li>
 				<li class="<?php echo ($menu == "clientes" ? "active" : "")?>"><a href="clientes.php"><i class="fa fa-users"></i> Clientes</a></li>
-				<li class="<?php echo ($menu == "contacto" ? "active" : "")?>"><a href="contacto.php"><i class="fa fa-map-marker"></i> Contacto</a></li>
+				<li class="<?php echo ($menu == "contacto" ? "active open" : "")?> collapsible">
+					<a href="#" onclick="return false;"><i class="fa fa-map-marker"></i> Contacto</a>
+					<ul class="sub-menu">
+						<li class="<?php echo ($page == "contacto" ? "activo" : "")?>"><a href="contacto.php"><i class="fa fa-address-card-o"></i> Contacto</a></li>
+						<li class="<?php echo ($page == "enlaces" ? "activo" : "")?>"><a href="enlaces.php"><i class="fa fa-link"></i> Enlaces</a></li>
+					</ul>
+				</li>
+				
 				<li class="<?php echo ($menu == "social" ? "active" : "")?>"><a href="social.php"><i class="fa fa-share-alt"></i> Redes Sociales</a></li>
 			</ul>
 		</div> <!-- /sidebar -->
