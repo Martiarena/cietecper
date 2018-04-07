@@ -29,23 +29,25 @@
 				<div class="col-md-12">
 					<div id="contact-form">
 						<div class="row">
-						
-							<!-- Google Map -->
 							<div class="col-md-6" data-animated="0">
 								<h3>Enlaces de Interés</h3>
 								<div class="row">
 									<div class="col-md-12" data-animated="0">
 										<dl>
-											<dt><a href="http://www.leandrorodriguez.org/articulos/tecnoeduca.html" target="_blank">Leandro Rodriguez</a></dt>
-											<dd>Algunas Reflexiones sobre el uso de la Tecnología en la Educación</dd>
-											<dt><a href="https://www.youtube.com/watch?v=pRoQA3yld3E&feature=related" target="_blank">Jaramillo V et Al</a></dt>
-											<dd>La Educacion del Siglo XXI</dd>
-											<dt><a href="http://www.leandrorodriguez.org/articulos/cambios.htm" target="_blank">Leandro Rodriguez</a></dt>
-											<dd>Cambios necesarios en la educación</dd>
-											<dt><a href="https://www.youtube.com/watch?v=XpnGHre7r-8" target="_blank">Emilia Ahvenjarvi</a></dt>
-											<dd>La Educacion en Finlandia</dd>
-											<dt><a href="http://www.leandrorodriguez.org/articulos/freno.htm" target="_blank">Leandro Rodriguez</a></dt>
-											<dd>El sistema educativo es un freno a la creatividad</dd>
+											<?php
+						                        $consultarEnlaces = "SELECT * FROM enlaces WHERE estado='Activo' ORDER BY orden";
+						                        $resultadoEnlaces = mysqli_query($enlaces,$consultarEnlaces) or die('Consulta fallida: ' . mysqli_error($enlaces));
+						                        while($filaEnl = mysqli_fetch_array($resultadoEnlaces)){
+						                            $xTitulo		= $filaEnl['titulo'];
+						                            $xDescripcion	= $filaEnl['descripcion'];
+						                            $xEnlace		= $filaEnl['enlace'];
+							                ?>
+											<dt><a href="<?php echo $xEnlace; ?>" target="_blank"><?php echo $xTitulo; ?></a></dt>
+											<dd><?php echo $xDescripcion; ?></dd>
+											<?php
+												}
+												mysqli_free_result($resultadoEnlaces);
+											?>
 										</dl>
 									</div>
 								</div>

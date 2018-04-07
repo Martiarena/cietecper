@@ -51,26 +51,21 @@
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-							<p><strong>Sexo:</strong></p>
+							<p><strong style="color:#fff;">Sexo:</strong></p>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 							<div class="radio">
-								<label>
-									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-									<span class="checkmark"></span>
-									Masculino
-								</label>
+								<input id="radio-1" name="sexo" type="radio" checked>
+								<label for="radio-1" class="radio-label">Masculino</label>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 							<div class="radio">
-							 	<label>
-							   		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-							    	<span class="checkmark"></span>
-							    	Femenino
-							 	</label>
+								<input id="radio-2" name="sexo" type="radio">
+								<label  for="radio-2" class="radio-label">Femenino</label>
 							</div>
 						</div>
+						<br>
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<button type="reset" class="btn-limpiar">Limpiar</button> <button class="btn_green">Registrarse</button>
 						</div>

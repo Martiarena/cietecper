@@ -15,8 +15,8 @@ if($proceso == ""){
 	$titulo 			= htmlspecialchars($filaEnl['titulo']);
 	$descripcion		= htmlspecialchars($filaEnl['descripcion']);
 	$enlace				= htmlspecialchars($filaEnl['enlace']);
-	$orden	 			= $filaGen['orden'];
-	$estado 			= $filaGen['estado'];
+	$orden	 			= $filaEnl['orden'];
+	$estado 			= $filaEnl['estado'];
 }
 if($proceso=="Actualizar"){	
 	$cod_enlace				= $_POST['cod_enlace'];
@@ -29,7 +29,7 @@ if($proceso=="Actualizar"){
 		$orden			= '0';
 	}
 	$estado					= $_POST['estado'];
-	$actualizarEnlaces	= "UPDATE generalidades SET cod_enlace='$cod_enlace', titulo='$titulo', descripcion='$descripcion', enlace='$enlace', orden='$orden', estado='$estado' WHERE cod_enlace='$cod_enlace'";
+	$actualizarEnlaces	= "UPDATE enlaces SET cod_enlace='$cod_enlace', titulo='$titulo', descripcion='$descripcion', enlace='$enlace', orden='$orden', estado='$estado' WHERE cod_enlace='$cod_enlace'";
 	$resultadoActualizar = mysqli_query($enlaces,$actualizarEnlaces) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	
 	header("Location:enlaces.php");
@@ -39,7 +39,6 @@ if($proceso=="Actualizar"){
 <html lang="en">
 <head>
 	<?php include("includes/head.php") ?>
-    <script src="js-editor/ckeditor.js" type="text/javascript"></script>
 	<script>
 		function Validar(){
 			if(document.fcms.titulo.value==""){
@@ -82,7 +81,7 @@ if($proceso=="Actualizar"){
 				<i class="fa fa-home"></i> Inicio <i class="fa fa-caret-right"></i> Enlaces <i class="fa fa-caret-right"></i> Editar enlaces
 			</div>
 			<div class="wrp clearfix">
-            	<?php $page="generalidades"; include("includes/menu-inicio.php"); ?>
+            	<?php $page="enlaces"; include("includes/menu-contacto.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -107,12 +106,16 @@ if($proceso=="Actualizar"){
                                         </div>
 										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <textarea name="descripcion" id="descripcion"><?php echo $descripcion; ?></textarea>
-                                            <script>
-												CKEDITOR.replace('descripcion');
-											</script>
                                         </div>
                                     </div>
-                                    <div class="separador-20"></div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                            <label><strong>Enlace: *<br><span>(ejemplo: www.enlace.com)</span></strong></label>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                            <input name="enlace" type="text" id="enlace" value="<?php echo $enlace; ?>" />
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         	<label><strong>Orden:</strong></label>
@@ -136,11 +139,11 @@ if($proceso=="Actualizar"){
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         	<div class="btn-group">
-                                            	<a href="generalidades.php" class="btn btn-pink"><i class="fa fa-times"></i> Cancelar</a>
-                                                <button class="btn btn-green" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Editar generalidad</button>
+                                            	<a href="enlaces.php" class="btn btn-pink"><i class="fa fa-times"></i> Cancelar</a>
+                                                <button class="btn btn-green" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Editar Enlace</button>
 											</div>
 							                <input type="hidden" name="proceso">
-                                            <input type="hidden" name="cod_generalidad" value="<?php echo $cod_generalidad; ?>">
+                                            <input type="hidden" name="cod_enlace" value="<?php echo $cod_enlace; ?>">
                                         </div>
                                     </div>
 								</div>

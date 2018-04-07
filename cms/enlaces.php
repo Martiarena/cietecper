@@ -120,12 +120,12 @@ if ($eliminar == "true") {
 			                        $resultadoEnlaces = mysqli_query($enlaces,$consultarEnlaces) or die('Consulta fallida: ' . mysqli_error($enlaces));
 			                        while($filaEnl = mysqli_fetch_array($resultadoEnlaces)){
 			                            $xCodigo		= $filaEnl['cod_enlace'];
-			                            $xImagen		= $filaEnl['titulo'];
+			                            $xTitulo		= $filaEnl['titulo'];
 			                            $xOrden			= $filaEnl['orden'];
 			                            $xEstado		= $filaEnl['estado'];
 				                    ?>
                                     <tr>
-                                        <td><?php echo $xImagen; ?></td>
+                                        <td><?php echo $xTitulo; ?></td>
                                         <td><?php echo $xOrden; ?></td>
                                         <td><strong>[<?php echo $xEstado; ?>]</strong></td>
                                         <td>
