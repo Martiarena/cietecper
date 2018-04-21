@@ -6,17 +6,7 @@
 <!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <head>
 	<?php include("includes/head.php"); ?>
-	<?php $cod_articulo		= $_REQUEST['cod_articulo']; ?>
-	<?php 
-		$consultaarticulo = "SELECT * FROM articulos WHERE cod_articulo='$cod_articulo'";
-		$ejecutararticulo = mysqli_query($enlaces,$consultaarticulo) or die('Consulta fallida: ' . mysqli_error($enlaces));
-		$filaArt = mysqli_fetch_array($ejecutararticulo);
-			$cod_articulo	= $filaArt['cod_articulo'];
-			$titulo			= $filaArt['titulo'];
-			$imagen			= $filaArt['imagen'];
-			$fecha			= $filaArt['fecha'];
-			$descripcion	= $filaArt['descripcion'];
-	?>
+	<meta http-equiv="refresh" content="15;URL=index.php">
 </head>
 <body id="page-top">
 <!-- Outer-wrap -->
@@ -29,11 +19,10 @@
 			<div class="row" data-animated="0">
 				<div class="col-md-12">
 					<div id="page-header">
-						<h3><span>Artículos</span></h3>
+						<h3><span>Usuario no autorizado</span></h3>
 						<ul class="bread_crumbs">
 							<li><a href="index.php">Inicio</a></li>
-							<li><a href="articulos.php">Artículos</a></li>
-							<li><strong>Art&iacute;culo</strong></li>
+							<li><strong>Seguridad</strong></li>
 						</ul>
 					</div>
 				</div>
@@ -45,20 +34,14 @@
 					<div id="m-blog-content">
 						<div class="row">
 							<div class="col-md-12">
-								<article class="item">
-									<div class="mb-thumb">
-										<img src="cms/images/articulos/<?php echo $imagen; ?>" class="img-responsive" alt=""/>
-									</div>
-									<h4><?php echo $titulo; ?></h4>
-									<div class="texto-articulo">
-										<?php echo $descripcion; ?>
-									</div>
-									<hr>
-									<p><a class="btn-more" href="articulos.php">&laquo; Volver a Artículos</a></p>
-								</article>
+								<div class="alert alert-danger text-center" role="alert">
+									<h3>Usuario no autorizado</h3>
+									<p>Lo sentimos, ud. no es un usuario registrado en nuestro sistema. Si cree que se trata de un error vuelva a intentarlo ingresando el email y la clave correcta</p>
+									<p><span class="label label-danger">Si ha olvidado su clave puede pedir que sea enviada a su correo haciendo <a class="alert-span" href="olvida.php">[Click aqu&iacute;]</a></span></p>
+                				</div>
+                				<p><a class="btn-more" href="index.php">&laquo; Volver al inicio</a></p>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

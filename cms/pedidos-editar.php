@@ -67,7 +67,6 @@ $observaciones	= utf8_encode($filacli['observaciones']);
 												$xCantidad	 	= $filaDetalle['cantidad'];
 												$xPrecio 		= $filaDetalle['precio'];
 												$xTotal			= ($xCantidad*$xPrecio);
-												$xGeneral		= ($xGeneral+$xTotal);
 												$num++;
 										?>
 										<tr>

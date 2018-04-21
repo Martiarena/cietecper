@@ -58,10 +58,10 @@ if($proceso == "Actualizar"){
         <?php include("includes/header.php"); ?>
 		<div id="content" class="clearfix">
 			<div class="header">
-				<h1 class="page-title">Productos</h1>
+				<h1 class="page-title">Pedidos</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-barcode"></i> Productos <i class="fa fa-caret-right"></i> Pedidos <i class="fa fa-caret-right"></i> Editar Correo para Pedidos
+				<i class="fa fa-shopping-cart"></i> Pedidos
 			</div>
 			<div class="wrp clearfix">
                 <div class="fluid">

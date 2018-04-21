@@ -309,7 +309,7 @@ h3.titulo {
   margin-bottom: 25px;
 }
 
-.btn_green {
+.btn_green, .btn_green_1 {
   padding: 9px 18px;
   background: #6ec800;
   display: inline-block;
@@ -329,6 +329,32 @@ h3.titulo {
   border: 1px solid #fff;
 }
 
+.btn_green_1:hover{
+  background: #fff;
+  color: #6ec800;
+  border: 1px solid #6ec800;
+}
+
+.btn_red {
+  padding: 9px 18px;
+  background: #d43f3a;
+  display: inline-block;
+  margin: 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  color: #FFF;
+  position: relative;
+  font-weight: 700;
+  border: 1px solid #d43f3a;
+  text-transform: uppercase;
+}
+
+.btn_red:hover{
+  background: #fff;
+  color: #d43f3a;
+  border: 1px solid #d43f3a;
+}
+
 .btn-limpiar {
   color: #6ec800;
   font-weight: 700;
@@ -344,7 +370,14 @@ h3.titulo {
   color: #000;
 }
 
+.navbar-default .nav li a {
+  font-size: 15px;
+  padding: 15px 0;
+}
 
+.menu-effect a::before {
+  padding: 10px 0 14px;
+}
 
 .radio input[type="radio"] {
   position: absolute;
@@ -386,6 +419,14 @@ h3.titulo {
 .radio label {
   padding-left: 0px;
   color: #747474;
+}
+
+.alert-span{
+  color:#ffff00;
+}
+
+.alert-span:hover{
+  color:#ffc800;
 }
 
 @media only screen and (max-width:1199px){

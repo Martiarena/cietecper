@@ -1,6 +1,6 @@
 <!-- Footer - copyright -->
 			<footer data-animated="0">
-				<p>&copy; 2017 Ciencia y Tecnolog&iacute;a. Todos los derechos reservados | Dise&ntilde;ado por <a href="#" target="_blank">Raúl Martiarena</a></p>
+				<p>&copy; 2018 Ciencia y Tecnolog&iacute;a. Todos los derechos reservados | Dise&ntilde;ado por <a href="#" target="_blank">Raúl Martiarena</a></p>
 				<a href="#page-top" class="backtotop-icon page-scroll"></a>
 			</footer>
 			<!-- jQuery -->

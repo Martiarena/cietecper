@@ -17,7 +17,6 @@ if($proceso == ""){
 	$telefono			= $filaCli['telefono'];
 	$email				= $filaCli['email'];
 	$clave 				= $filaCli['clave'];
-	$fecha_nacimiento 	= $filaCli['fecha_nacimiento'];
 	$sexo				= $filaCli['sexo'];
 	$estado				= $filaCli['estado'];
 }
@@ -29,10 +28,9 @@ if($proceso=="Actualizar"){
 	$telefono			= $_POST['telefono'];
 	$email				= $_POST['email'];
 	$clave				= $_POST['clave'];
-	$fecha_nacimiento	= $_POST['fecha_nacimiento'];
 	$sexo				= $_POST['sexo'];
 	$estado				= $_POST['estado'];
-	$actualizarClientes	= "UPDATE clientes SET cod_cliente='$cod_cliente', nombres='$nombres', direccion='$direccion', telefono='$telefono', email='$email', clave='$clave', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo', estado='$estado' WHERE cod_cliente='$cod_cliente'";
+	$actualizarClientes	= "UPDATE clientes SET cod_cliente='$cod_cliente', nombres='$nombres', direccion='$direccion', telefono='$telefono', email='$email', clave='$clave', sexo='$sexo', estado='$estado' WHERE cod_cliente='$cod_cliente'";
 	$resultadoActualizar = mysqli_query($enlaces,$actualizarClientes) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	header("Location:clientes.php");
 }
@@ -48,6 +46,16 @@ if($proceso=="Actualizar"){
 			if(document.fcms.nombres.value==""){
 				alert("Debe escribir un nombre");
 				document.fcms.nombres.focus();
+				return;	
+			}
+			if(document.fcms.direccion.value==""){
+				alert("Debe escribir una dirección");
+				document.fcms.direccion.focus();
+				return;
+			}
+			if(document.fcms.telefono.value==""){
+				alert("Debe escribir un teléfono");
+				document.fcms.telefono.focus();
 				return;	
 			}
 			if(document.fcms.email.value==""){

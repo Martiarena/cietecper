@@ -5,7 +5,9 @@
 <!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
 <!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
-<?php include("includes/head.php"); ?>
+<head>
+	<?php include("includes/head.php"); ?>
+</head>
 <body id="page-top">
 <!-- Outer-wrap -->
 <div class="outer-wrap">
@@ -46,7 +48,7 @@
 								$posicion = ($pagina-1)*$registros_por_paginas;
 								$limite = "LIMIT $posicion, $registros_por_paginas";
 
-								$consultararticulos = "SELECT * FROM articulos ORDER BY fecha ASC $limite";
+								$consultararticulos = "SELECT * FROM articulos ORDER BY fecha DESC $limite";
 			    				$resultadoarticulos = mysqli_query($enlaces,$consultararticulos) or die('Consulta fallida: ' . mysqli_error($enlaces));
 			    				while($filaArt = mysqli_fetch_array($resultadoarticulos)){
 			        				$xCodigoA		= $filaArt['cod_articulo'];
@@ -77,9 +79,10 @@
 										$strCut = substr($xTitulo,0,72);
 										echo strip_tags($strCut); ?></a></h4>
 									<p class="text-justify"><?php 
-										$strCut = substr($xDescripcion,0,170);
-										$xDescripcion = substr($strCut,0,strrpos($strCut, ' ')).'...';
-										echo strip_tags($xDescripcion);
+										$xDescripcion_cl = strip_tags($xDescripcion);
+										$strCut = substr($xDescripcion_cl,0,170);
+										$xDescripcion_cl = substr($strCut,0,strrpos($strCut, ' ')).'...';
+										echo $xDescripcion_cl;
 									?></p>
 								</div>
 							</div>

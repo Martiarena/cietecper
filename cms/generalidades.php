@@ -150,17 +150,6 @@ if ($eliminar == "true") {
 			</div>
 		</div>
 		<?php include("includes/footer.php") ?>
-		<script src="media/js/jquery.dataTables.js"></script>
-		<script src="media/ZeroClipboard/ZeroClipboard.js"></script>
-		<script src="media/js/TableTools.js"></script>
-		<script>
-		$(document).ready(function(){
-			$("#generalidades").dataTable({
-				"sDom": 'T<"nada">lftrip',
-				"sPaginationType": "full_numbers"
-			});
-		});
-		</script>
 	</div>
 </body>
 </html>

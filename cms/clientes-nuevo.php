@@ -13,7 +13,6 @@ if($proceso == "Registrar"){
 	$telefono			= $_POST['telefono'];
 	$email				= mysqli_real_escape_string($enlaces, $_POST['email']);
 	$clave				= $_POST['clave'];
-	$fecha				= $_POST['fecha_nacimiento'];
 	$sexo				= $_POST['sexo'];
 	$estado				= $_POST['estado'];
 		
@@ -22,11 +21,11 @@ if($proceso == "Registrar"){
 	$numreg = mysqli_num_rows($ejecutarValidar);
 	
 	if($numreg==0){
-		$insertarClientes = "INSERT INTO clientes(nombres, direccion, telefono, email, clave, fecha_nacimiento, sexo, estado)VALUE('$nombres', '$direccion', '$telefono', '$email', '$clave', '$fecha', '$sexo', '$estado')";
+		$insertarClientes = "INSERT INTO clientes(nombres, direccion, telefono, email, clave, sexo, estado)VALUE('$nombres', '$direccion', '$telefono', '$email', '$clave', '$sexo', '$estado')";
 		$resultadoInsertar = mysqli_query($enlaces,$insertarClientes);
 		$mensaje = "<div class='alert alert-success' role='alert'>
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-					<p><strong>Nota:</strong> El clientes se registr&oacute; con exitosamente. <a href='clientes.php'>Ir a Clientes</a></p>
+					<p><strong>Nota:</strong> El cliente se registr&oacute; exitosamente. <a href='clientes.php'>Ir a Clientes</a></p>
                 </div>";
 	}else{
 		$mensaje = "<div class='alert alert-warning' role='alert'>
@@ -47,6 +46,16 @@ if($proceso == "Registrar"){
 			if(document.fcms.nombres.value==""){
 				alert("Debe escribir un nombre");
 				document.fcms.nombres.focus();
+				return;	
+			}
+			if(document.fcms.direccion.value==""){
+				alert("Debe escribir una direccion");
+				document.fcms.direccion.focus();
+				return;	
+			}
+			if(document.fcms.telefono.value==""){
+				alert("Debe escribir un telefono");
+				document.fcms.telefono.focus();
 				return;	
 			}
 			if(document.fcms.email.value==""){
@@ -114,7 +123,7 @@ if($proceso == "Registrar"){
                                     </div>
                                 	<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Direcci&oacute;n:</label>
+	                                        <label>Direcci&oacute;n: *</label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="direccion" type="text" id="direccion" />
@@ -122,7 +131,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Tel&eacute;fono:</label>
+	                                        <label>Tel&eacute;fono: *</label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="telefono" type="text" id="telefono" />
@@ -142,14 +151,6 @@ if($proceso == "Registrar"){
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="clave" type="password" id="clave" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Fecha de Nacimiento:</label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <input name="fecha_nacimiento" type="date" id="fecha_nacimiento" />
                                         </div>
                                     </div>
                                     <div class="row">

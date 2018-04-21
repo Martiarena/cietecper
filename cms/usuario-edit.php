@@ -154,38 +154,38 @@ if($proceso == "Actualizar"){
 	                        <form class="fcms" name="fcms" method="post" action="">
                             	<div class="form-int">
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                             <label>Nombre: *</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                             <input type="text" name="nombres" value="<?php echo $nombres; ?>" />
                                         </div>
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                             <label>Email:</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                         	<p><?php echo $email; ?></p>
                                             <input type="hidden" name="email" value="<?php echo $email; ?>" />
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>Usuario:</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                         	<p><?php echo $usuario; ?></p>
                                             <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" />
                                         </div>
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>Clave: *</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                         	<input type="password" name="clave" size="20" value="<?php echo $clave; ?>" >
                                         </div>
                                     </div>
                                     <?php if($xVisitante=="No"){ ?>
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>Estado:</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
@@ -201,7 +201,7 @@ if($proceso == "Actualizar"){
                                     <?php } ?>
                                     <?php if($xVisitante=="No"){ ?>
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>&iquest;Visitante?:</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">

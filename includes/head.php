@@ -1,4 +1,3 @@
-<head>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<?php
@@ -67,4 +66,3 @@
       	<script src="./js/html5shiv.js"></script>
 	      <script src="./js/respond.js"></script>
 	<![endif]-->
-</head>

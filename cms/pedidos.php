@@ -25,16 +25,15 @@
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "cursos"; $page = "pagados"; include("includes/header.php") ?>
+        <?php $menu = "pedidos"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
-            	<h1 class="page-title">Cursos</h1>
+            	<h1 class="page-title">Pedidos</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-cube"></i> Cursos <i class="fa fa-caret-right"></i> Pagados
+				<i class="fa fa-shopping-cart"></i> Pedidos
 			</div>
 			<div class="wrp clearfix">
-            	<?php  include("includes/menu-productos.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">

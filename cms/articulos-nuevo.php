@@ -84,7 +84,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label><strong>Imagen:</strong><br><span>(-px x -px)</span></label>
+                                            <label><strong>Imagen:</strong><br><span>(780px x 420px)</span></label>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <input name="imagen" type="text" id="imagen" />

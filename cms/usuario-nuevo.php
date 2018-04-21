@@ -154,36 +154,36 @@ if($proceso == "Registrar"){
                             <form class="fcms" name="fcms" method="post" action="">
                             	<div class="form-int">
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                             <label>Nombre: *</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                             <input type="text" name="nombres" />
                                         </div>
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                             <label>Email: *</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                             <input type="email" name="email" />
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>Usuario: *</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                             <input type="text" name="usuario" />
                                         </div>
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>Clave: *</label>
                                         </div>
-                                        <div class="col-lg-5 col-md-4 col-sm-10 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
                                         	<input type="password" name="clave" />
                                         </div>
                                     </div>
                                     <div class="separador-20"></div>
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>&iquest;Visitante?:</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
@@ -195,7 +195,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="separador-20"></div>
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         	<label>Estado:</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
