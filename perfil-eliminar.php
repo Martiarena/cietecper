@@ -25,7 +25,7 @@ $encabezado = "Cuenta Eliminada - ".$Nombre_web;
 $encabezada = "Se ha Eliminado un Usuario registrado";
 $mensaje = "<p>Estimado ".$nombres." su cuenta se ha eliminado como solicit&oacute;, esperamos vuelva a registrarse en un futuro</p>";
 
-$mensajea = "<p>Se eliminó a ".$nombres."(".$email.") de nuestra base de datos.</p>";
+$mensajea = "<p>Se elimin&oacute; a ".$nombres."(".$email.") de nuestra base de datos.</p>";
 
 $consultarCot = 'SELECT * FROM contacto';
 $resultadoCot = mysqli_query($enlaces,$consultarCot) or die('Consulta fallida: ' . mysqli_error($enlaces));

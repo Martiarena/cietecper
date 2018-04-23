@@ -31,8 +31,6 @@ if($proceso=="Actualizar"){
 	$telefono			= $filaCli['telefono'];
 	$email 				= $filaCli['email'];
 	$clave				= $filaCli['clave'];
-	$empresa 			= $filaCli['empresa'];
-	$fecha_nacimiento 	= $filaCli['fecha_nacimiento'];
 	$sexo				= $filaCli['sexo'];
 	
 	$consultarCot = 'SELECT * FROM contacto';
@@ -45,11 +43,12 @@ if($proceso=="Actualizar"){
 	$resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	$filaMet = mysqli_fetch_array($resultadoMet);
 		$Nombre_web	= utf8_encode($filaMet['title']);
+		$URL_web	= $filaMet['url'];
 
 	$emailDestino = $email;
 	$encabezado = "Cambio de Clave - ".$Nombre_web;
 	$mensaje .= "
-		<p>Cambio de clave realizado, acceda en: <a href='#'>Enlace</a></p>
+		<p>Cambio de clave realizado, acceda en: <a href='".$URL_web."'>".$Nombre_web."</a></p>
 		<h3>Nueva Informaci&oacute;n de la Cuenta</h3>
 		<table width='100%' border=0 cellpadding=0 cellspacing=0 align=center>
 			<tr>
@@ -81,7 +80,7 @@ if($proceso=="Actualizar"){
 				<td>".$sexo."<br></th>
 			</tr>
 		</table>
-		<p>Cualquier duda contacte a soporte:".$xDesemail."</p>";
+		<p>Cualquier duda contacte a soporte: ".$xDesemail."</p>";
 	$mailcabecera = 'MIME-Version: 1.0'."\r\n";
 	$mailcabecera.= 'Content-type:text/html; charset-iso-8859-1'."\r\n";
 	$mailcabecera.= "Desde: ".$xDesemail;

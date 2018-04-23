@@ -40,9 +40,12 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				                <div class="row">
-				                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<p><strong>Su cuenta se elimin&oacute; con &eacute;xito</strong></p>
-										<p>Muchas gracias por haberse registrado, esperamos vuelva pronto.</p>
+				                   	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				                   		<div class="alert alert-info text-center" role="alert">
+				                    		<h3>Perfil Eliminado</h3>
+											<p><strong>Su cuenta se elimin&oacute; con &eacute;xito</strong><br>
+											Muchas gracias por haberse registrado, esperamos vuelva pronto.</p>
+										</div>
 										<hr>
 										<p><a href="index.php" class="btn-more">&laquo; Volver a Inicio</a></p>
 									</div>

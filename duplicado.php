@@ -1,8 +1,5 @@
 <?php include "cms/modulos/conexion.php" ?>
-<?php include "modulos/verificar-ingreso-cliente.php"; ?>
-<?php
-	$_SESSION['IdCliente']=$xCodCliente;
-?>
+<?php include "modulos/session-core.php"; ?>
 <!DOCTYPE html>
 <!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
@@ -22,10 +19,10 @@
 			<div class="row" data-animated="0">
 				<div class="col-md-12">
 					<div id="page-header">
-						<h3><span>Bienvenido</span></h3>
+						<h3><span>Usuario no autorizado</span></h3>
 						<ul class="bread_crumbs">
 							<li><a href="index.php">Inicio</a></li>
-							<li><strong>Bienvenido</strong></li>
+							<li><strong>Seguridad</strong></li>
 						</ul>
 					</div>
 				</div>
@@ -37,8 +34,12 @@
 					<div id="m-blog-content">
 						<div class="row">
 							<div class="col-md-12">
-								<h4>Bienvenido a <?php echo $xTitulo; ?></h4>
-								<p>Hola <strong><?php echo utf8_decode($xAlias); ?></strong> a partir de estos momentos Ud. puede hacer uso del sistema de carrito de compras para realizar pagos de nuestros cursos v&iacute;a web y actualizar sus datos de perfil.</p>
+								<div class="alert alert-warning text-center" role="alert">
+
+									<h3>Usuario Duplicado</h3>
+									<p>Lo sentimos, pero el correo que ha usado ya fue registrado en nuestra base de datos, por favor ingresar otro email para hacer el registro. Gracias.</p>
+								
+								</div>
                 				<p><a class="btn-more" href="index.php">&laquo; Volver al inicio</a></p>
 							</div>
 						</div>

@@ -14,9 +14,8 @@
 		<?php $page = "inicio"; include "includes/menu.php"; ?>
 		<!-- Right Main Content -->
 		<div class="col-md-9 m-right">
-		
 			<!-- Intro Slider -->
-			<div class="row" data-animated="0">
+			<div class="row">
 				<div class="col-md-12">
 					<div id="intro">
 						<div id="intro-slider" class="owl-carousel owl-theme">
@@ -104,7 +103,7 @@
 					<div id="blog" data-animated="0">
 						<div class="">
 							<div class="col-md-12">
-								<h3 class="titulo">Artículos de Reflexión</h3>
+								<h3 class="titulo">Art&iacute;culos de Reflexi&oacute;n</h3>
 							</div>
 						</div>
 						<div id="m-blog" class="owl-carousel owl-theme">
@@ -195,6 +194,7 @@
 								<h3 class="titulo">Cursos y Capacitaciones</h3>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="col-md-4">
 								<div class="product-wrap">
@@ -238,6 +238,7 @@
 								</div>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>

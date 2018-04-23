@@ -50,11 +50,12 @@ if($proceso=="Actualizar"){
 		$resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
 		$filaMet = mysqli_fetch_array($resultadoMet);
 			$Nombre_web	= utf8_encode($filaMet['title']);
+			$URL_web	= $filaMet['url'];
 
 		$emailDestino = $email;
 		$encabezado = "Perfil Actualizado - ".$Nombre_web;
 		$mensaje .= "
-			<p>Cambio de datos realizado, acceda en: <a href='#'>Enlace</a></p>		
+			<p>Cambio de datos realizado, acceda en: <a href='".$URL_web."'>Enlace</a></p>		
 			<h3>Nuevos Datos de Perfil</h3>
 			<table width='100%' border=0 cellpadding=0 cellspacing=0 align=center>
 				<tr>

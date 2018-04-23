@@ -6,8 +6,13 @@
 			document.flogin.emaillog.focus();
 			return;
 		}
+		if (document.flogin.emaillog.value.indexOf('@') == -1){
+			alert ("La \"dirección de email\" no es correcta");
+			document.flogin.emaillog.focus();
+			return;
+		}
 		if(document.flogin.clavelog.value==""){
-			alert("Debes ingresar tu clave");
+			alert("Debes ingresar su clave");
 			document.flogin.clavelog.focus();
 			return;
 		}
@@ -31,7 +36,7 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<p><a href="#">&iquest;Olvid&oacute; su clave?</a></p>
+					<p><a href="olvido.php">&iquest;Olvid&oacute; su clave?</a></p>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 					<div class="text-right">
@@ -42,16 +47,45 @@
 			</div>
 		</form>
 	</div>
-	<script type="javascript">
-		function register() {
-        	
-    	}
+	<script>
 		function ValidarReg(){
-	    	
+	    	document.fregistro.action="registrar.php";
+			if(document.fregistro.nombresreg.value==""){
+				alert("Debes llenar tu nombre");
+				document.fregistro.nombresreg.focus();
+				return;
+			}
+			if(document.fregistro.direccionreg.value==""){
+				alert("Debes llenar tu direccion");
+				document.fregistro.direccionreg.focus();
+				return;
+			}
+			if(document.fregistro.telefonoreg.value==""){
+				alert("Debes llenar tu teléfono");
+				document.fregistro.telefonoreg.focus();
+				return;
+			}
+			if(document.fregistro.emailreg.value==""){
+				alert("Debes llenar tu email");
+				document.fregistro.emailreg.focus();
+				return;
+			}
+			if (document.fregistro.emailreg.value.indexOf('@') == -1){
+				alert ("La \"dirección de email\" no es correcta");
+				document.fregistro.emailreg.focus();
+				return;
+			}
+			if(document.fregistro.clavereg.value==""){
+				alert("Debes llenar su clave");
+				document.fregistro.clavereg.focus();
+				return;
+			}
+			document.fregistro.proceso.value="Registrar";
+			document.fregistro.submit();
 		}
 	</script>
 	<div id="demo-modal-content-1" class="demo-modal-content">
-		<form class="contact-form" data-animated="0" id="fregistro" action="php/register.php" method="post">
+		<form class="contact-form" data-animated="0" id="fregistro" name="fregistro" action="" method="post">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<h3>Registro de Usuarios</h3>
@@ -93,7 +127,8 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 20px;">
 					<div id="mail-status"></div>
-					<button type="reset" class="btn-limpiar">Limpiar</button> <button class="btn_green" onClick="registrarme();">Registrarse</button>
+					<input type="hidden" name="proceso" id="proceso" />
+					<button type="reset" class="btn-limpiar">Limpiar</button> <input type="button"  class="btn_green" value="Registrarse" onClick="javascript:ValidarReg();" />
 				</div>
 			</div>
 		</form>
@@ -101,7 +136,7 @@
 </div>
 <div class="navbar-fixed-top black-back">
 	<div class="container">
-		<div class="row" data-animated="0">
+		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-6 text-contact">
 			<p>
 				<?php

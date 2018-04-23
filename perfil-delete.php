@@ -48,15 +48,14 @@ $sexo				= $filaCli['sexo'];
 						<div class="row">
 							<div class="col-md-12">
 								<h2 class="page-header">Datos de Perfil</h2>
-								<?php echo $cambio; ?>
             				</div>
         				</div>
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				                <div class="row">
 				                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<p><?php echo utf8_decode($xAlias); ?> ¿Está seguro que quiere eliminar su cuenta?</p>
-										<p><strong>Nota:</strong> Esta acción no se puede deshacer).</p>
+										<p><?php echo utf8_decode($xAlias); ?> ¿Est&aacute; seguro que quiere eliminar su cuenta?</p>
+										<p><strong>Nota: Esta acci&oacute;n no se puede deshacer.</strong></p>
 										<p><a href="perfil-eliminar.php?cod_cliente=<?php echo $cod_cliente; ?>" class="btn_red">Eliminar Cuenta</a></p>
 										<hr>
 										<p><a href="perfil.php" class="btn-more">&laquo; Volver a su Perfil</a></p>
