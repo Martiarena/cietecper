@@ -80,16 +80,16 @@ if ($eliminar == "true") {
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "contacto"; $page = "enlaces"; include("includes/header.php") ?>
+        <?php $menu = "inicio"; $page = "enlaces"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
-				<h1 class="page-title">Datos de Contacto</h1>
+				<h1 class="page-title">P&aacute;gina de Inicio</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Enlaces de Inter&eacute;s
+				<i class="fa fa-home"></i> Inicio <i class="fa fa-caret-right"></i> Enlaces de Inter&eacute;s
 			</div>
 			<div class="wrp clearfix">
-            	<?php $page="enlaces"; include("includes/menu-contacto.php"); ?>
+            	<?php $page="enlaces"; include("includes/menu-inicio.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">

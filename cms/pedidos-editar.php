@@ -30,15 +30,16 @@ $observaciones	= utf8_encode($filacli['observaciones']);
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php") ?>
+        <?php $menu = "tienda"; $page = "pedidos"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 			<div class="header">
             	<h1 class="page-title">Productos</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-barcode"></i> Productos <i class="fa fa-caret-right"></i> Pedidos <i class="fa fa-caret-right"></i> Editar Pedidos
+				<i class="fa fa-home"></i> Su tienda <i class="fa fa-caret-right"></i> Pedidos <i class="fa fa-caret-right"></i> Editar Pedidos
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "pedidos"; include("includes/menu-tienda.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -92,7 +93,7 @@ $observaciones	= utf8_encode($filacli['observaciones']);
 										</tr>
 										<tr>
 											<td width="30%"><strong>Nombres :</strong></td>
-											<td width="70%"><?php echo utf8_encode($nombres); ?></td>
+											<td width="70%"><?php echo $nombres; ?></td>
 										</tr>
 										<tr>
 											<td><strong>Direcci&oacute;n :</strong></td>

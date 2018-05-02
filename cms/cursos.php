@@ -9,17 +9,17 @@ if (isset($_REQUEST['eliminar'])) {
 	$eliminar = "";
 }
 if ($eliminar == "true") {
-	$sqlEliminar = "SELECT cod_producto FROM productos ORDER BY cod_producto";
+	$sqlEliminar = "SELECT cod_curso FROM cursos ORDER BY cod_curso";
 	$sqlResultado = mysqli_query($enlaces, $sqlEliminar);
 	$x = 0;
 	while($filaElim = mysqli_fetch_array($sqlResultado)){
-		$id_producto = $filaElim["cod_producto"];
-		if ($_REQUEST["chk" . $id_producto] == "on") {
+		$id_curso = $filaElim["cod_curso"];
+		if ($_REQUEST["chk" . $id_curso] == "on") {
 			$x++;
 			if ($x == 1) {
-					$sql = "DELETE FROM productos WHERE cod_producto=$id_producto";
+					$sql = "DELETE FROM cursos WHERE cod_curso=$id_curso";
 				} else { 
-					$sql = $sql . " OR cod_producto=$id_producto";
+					$sql = $sql . " OR cod_curso=$id_curso";
 				}
 		}
 	}
@@ -27,7 +27,7 @@ if ($eliminar == "true") {
 	if ($x > 0) { 
 		$rs = mysqli_query($enlaces, $sql);
 	}
-	header ("Location: productos.php");
+	header ("Location: cursos.php");
 }
 ?>
 <!DOCTYPE html>
@@ -83,36 +83,34 @@ if ($eliminar == "true") {
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php") ?>
+        <?php $menu = "tienda"; $page = "cursos"; include("includes/header.php") ?>
 
 		<div id="content" class="clearfix">
 	        <div class="header">
-				<h1 class="page-title">Productos</h1>
+				<h1 class="page-title">Su Tienda</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-cube"></i> Productos
+				<i class="fa fa-home"></i> Su Tienda<i class="fa fa-caret-right"></i> Cursos
 			</div>
 			<div class="wrp clearfix">
-            	<?php $page = "productos"; include("includes/menu-productos.php"); ?>
+            	<?php $page = "cursos"; include("includes/menu-tienda.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
 							<div class="widget-title">
-                            	<i class="fa fa-th"></i> <strong>Lista de Productos</strong>
+                            	<i class="fa fa-th"></i> <strong>Lista de Cursos</strong>
 							</div>
 						</div>
 						<div class="widget-content">
-							<a class="btn btn-blue" href="<?php if($xVisitante=="No"){ ?>productos-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus" aria-hidden="true"></i> A&ntilde;adir nuevo</a>
+							<a class="btn btn-blue" href="<?php if($xVisitante=="No"){ ?>curso-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus" aria-hidden="true"></i> A&ntilde;adir nuevo</a>
                             <hr>
 							<form name="fcms" method="post" action="">
                                 <table class="text-center" width="100%" border="1" id="productos">
                                 	<thead>
                                     	<tr>
                                         	<th width="5%" scope="col">Nº</th>
-											<th width="15%" scope="col">Categoria</th>
-											<th width="15%" scope="col">Sub Categoria</th>
-											<th width="20%" scope="col">Producto</th>
-                                            <th width="20%" scope="col">Imagen
+											<th width="30%" scope="col">Curso</th>
+                                            <th width="40%" scope="col">Imagen
 												<input type="hidden" name="proceso">
 												<input type="hidden" name="eliminar" value="false">
 											</th>
@@ -123,27 +121,22 @@ if ($eliminar == "true") {
 										</tr>
 									</thead>
                                     <?php
-				                        $consultarPro = "SELECT cp.cod_categoria, cp.categoria, scp.cod_sub_categoria, scp.subcategoria, p.* FROM productos_categorias as cp, productos_sub_categorias as scp, productos as p WHERE p.cod_categoria=cp.cod_categoria AND p.cod_sub_categoria=scp.cod_sub_categoria ORDER BY cp.categoria ASC";
-			    	                    $resultadoPro = mysqli_query($enlaces, $consultarPro);
-			        	                while($filaPro = mysqli_fetch_array($resultadoPro)){
-			            	                $xCodigo		= $filaPro['cod_producto'];
-			                	            $xCategoria		= utf8_encode($filaPro['categoria']);
-			                    	        $xSCategoria	= utf8_encode($filaPro['subcategoria']);
-			                        	    $xProducto		= $filaPro['nom_producto'];
-			                            	$xImagen		= $filaPro['imagen'];
-											$xFicha			= $filaPro['ficha_tecnica'];
-											$xVideo			= $filaPro['video'];
-	                			            $num++;
+				                        $consultarCur = "SELECT * FROM cursos ORDER BY orden ASC";
+			    	                    $resultadoCur = mysqli_query($enlaces, $consultarCur);
+			        	                while($filaCur = mysqli_fetch_array($resultadoCur)){
+			            	                $xCodigo		= $filaCur['cod_curso'];
+			                        	    $xTitulo		= $filaCur['titulo'];
+			                            	$xImagen		= $filaCur['imagen'];
+											$xFicha			= $filaCur['ficha_tecnica'];
+											$num++;
 				                    ?>
                                     <tr>
 				                        <td><?php echo $num; ?></td>
-				                        <td><?php echo $xCategoria; ?></td>
-				                        <td><?php echo $xSCategoria; ?></td>
-				                        <td><?php echo $xProducto; ?></td>
+				                        <td><?php echo $xTitulo; ?></td>
 				                        <td><img class="banner-int" src="images/productos/<?php echo $xImagen; ?>" /></td>
-				                        <td><strong><?php if($xVideo!=""){echo "<i class='fa fa-video-camera'></i> ";} if($xFicha!=""){echo "<i class='fa fa-file-pdf-o'></i> ";} ?></strong></td>
-				                        <td><a class="boton-eliminar <?php if($xVisitante=="Si"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="No"){ ?>productos-delete.php?cod_producto=<?php echo $xCodigo; ?><?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-trash"></i></a></td>
-                				        <td><a class="boton-editar" href="productos-edit.php?cod_producto=<?php echo $xCodigo; ?>"><i class="fa fa-pencil-square"></i></a></td>
+				                        <td><strong><?php if($xFicha!=""){echo "<i class='fa fa-file-pdf-o'></i> ";} ?></strong></td>
+				                        <td><a class="boton-eliminar <?php if($xVisitante=="Si"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="No"){ ?>cursos-delete.php?cod_curso=<?php echo $xCodigo; ?><?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-trash"></i></a></td>
+                				        <td><a class="boton-editar" href="cursos-edit.php?cod_curso=<?php echo $xCodigo; ?>"><i class="fa fa-pencil-square"></i></a></td>
 				                        <td>
 	                                        <?php if($xVisitante=="No"){ ?>
 	                                        <div class="custom-input">
@@ -154,7 +147,7 @@ if ($eliminar == "true") {
                 				    </tr>
 				                    <?php
 										}
-										mysqli_free_result($resultadoPro);
+										mysqli_free_result($resultadoCur);
 									?>
                                 </table>
                             </form>

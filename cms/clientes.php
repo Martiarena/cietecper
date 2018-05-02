@@ -78,15 +78,16 @@ if ($eliminar == "true") {
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "clientes"; include("includes/header.php") ?>
+        <?php $menu = "tienda"; $page = "clientes"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
-            	<h1 class="page-title">Clientes</h1>
+            	<h1 class="page-title">Su tienda</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-users"></i> Clientes
+				<i class="fa fa-home"></i> Su tienda <i class="fa fa-caret-right"></i> Clientes
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "clientes"; include("includes/menu-tienda.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -119,7 +120,7 @@ if ($eliminar == "true") {
 			                        $resultadoClientes = mysqli_query($enlaces,$consultarClientes) or die('Consulta fallida: ' . mysqli_error($enlaces));
 			                        while($filaCli = mysqli_fetch_array($resultadoClientes)){
 			                            $xCodigo		= $filaCli['cod_cliente'];
-										$xNombres		= utf8_encode($filaCli['nombres']);
+										$xNombres		= $filaCli['nombres'];
 			                            $xEmail			= $filaCli['email'];
 			                            $xSexo			= $filaCli['sexo'];
 			                            $xEstado		= $filaCli['estado'];

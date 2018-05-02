@@ -13,19 +13,21 @@ if($proceso == ""){
 	$filaBan = mysqli_fetch_array($ejecutarBanner);
 	$cod_banner = $filaBan['cod_banner'];
 	$imagen = $filaBan['imagen'];
+	$descripcion = $filaBan['descripcion'];
 	$orden	= $filaBan['orden'];
 	$estado = $filaBan['estado'];
 }
 if($proceso=="Actualizar"){	
 	$cod_banner			= $_POST['cod_banner'];
 	$imagen				= $_POST['imagen'];
+	$descripcion		= $_POST['descripcion'];
 	if(isset($_POST['orden'])){
 		$orden			= $_POST['orden'];
 	}else{
 		$orden			= '0';
 	}
 	$estado				= $_POST['estado'];
-	$actualizarBanner	= "UPDATE banners SET cod_banner='$cod_banner', imagen='$imagen', orden='$orden', estado='$estado' WHERE cod_banner='$cod_banner'";
+	$actualizarBanner	= "UPDATE banners SET cod_banner='$cod_banner', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE cod_banner='$cod_banner'";
 	$resultadoActualizar = mysqli_query($enlaces,$actualizarBanner) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	header("Location:banners.php");
 }
@@ -100,6 +102,14 @@ if($proceso=="Actualizar"){
                                         </div>
                                     </div>
                                     <div class="separador-15"></div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        	<label><strong>Descripci&oacute;n:</strong></label>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                            <input name="descripcion" type="text" id="descripcion" value="<?php echo $descripcion; ?>"  />
+                                        </div>
+                                    </div>
 									<div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         	<label><strong>Orden:</strong></label>

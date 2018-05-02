@@ -9,13 +9,14 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
 	$imagen				= $_POST['imagen'];
+	$descripcion		= $_POST['descripcion'];
 	if(isset($_POST['orden'])){
 		$orden			= $_POST['orden'];
 	}else{
 		$orden			= '0';
 	}
 	$estado				= $_POST['estado'];
-	$insertarBanner = "INSERT INTO banners(imagen, orden, estado)VALUE('$imagen', '$orden', '$estado')";
+	$insertarBanner = "INSERT INTO banners(imagen, descripcion, orden, estado)VALUE('$imagen', '$descripcion', '$orden', '$estado')";
 	$resultadoInsertar = mysqli_query($enlaces,$insertarBanner);
 	$mensaje = "<div class='alert alert-success' role='alert'>
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -91,6 +92,14 @@ if($proceso == "Registrar"){
                                         </div>
                                     </div>
                                     <div class="separador-15"></div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        	<label><strong>Descripci&oacute;n:</strong></label>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                            <input name="descripcion" type="text" id="descripcion" />
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                         	<label><strong>Orden:</strong></label>

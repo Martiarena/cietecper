@@ -15,28 +15,24 @@
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "inicio"; $page = "metatags"; include("includes/header.php") ?>
+        <?php $menu = "inicio"; $page = "curriculum"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">P&aacute;gina de Inicio</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Inicio <i class="fa fa-caret-right"></i> Metatags
+				<i class="fa fa-home"></i> Inicio <i class="fa fa-caret-right"></i> Logo & CV
 			</div>
 			<div class="wrp clearfix">
-            	<?php include("includes/menu-inicio.php"); ?>
+            	<?php $page = "curriculum"; include("includes/menu-inicio.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
 							<div class="widget-title">
-								<i class="fa fa-th"></i> <strong>Metatags</strong>
+								<i class="fa fa-th"></i> <strong>Logotipo</strong>
 							</div>
 						</div>
 						<div class="widget-content">
-                        	<div class="alert alert-info alert-dismissible" role="alert">
-                            	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                Metatags son los nombres, descripci&oacute;n y palabras clave con las que apareceran su web para los buscadores y redes sociales.
-							</div>
                             <?php
 								$consultarMet = 'SELECT * FROM metatags';
 								$resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
@@ -45,12 +41,6 @@
 									$xLogo			= $filaMet['logo'];
 									$xEslogan		= utf8_encode($filaMet['slogan']);
 									$xTitulo		= utf8_encode($filaMet['title']);
-									$xDes			= utf8_encode($filaMet['description']);
-									$xKey			= utf8_encode($filaMet['keywords']);
-									$xUrl			= $filaMet['url'];
-									$xFace1			= $filaMet['face1'];
-									$xFace2			= $filaMet['face2'];
-									$xIco			= $filaMet['ico'];
 							?>
 							<ul class="list-group">
                                	<li class="list-group-item">
@@ -66,39 +56,43 @@
                                     <p><img class="thumbnail img-responsive" src="images/meta/<?php echo $xLogo; ?>" />
                                     </p>
 								</li>
-                                <li class="list-group-item">
-                                    <p><strong>Descripci&oacute;n:</strong></p>
-                                    <p><?php echo $xDes; ?></p>
-								</li>
-								<li class="list-group-item">
-									<p><strong>Palabras Clave:</strong></p>
-									<p><?php echo $xKey; ?></p>
-								</li>
-								<li class="list-group-item">
-									<p><strong>Url:</strong></p>
-									<p>http://<?php echo $xUrl; ?></p>
-								</li>
-								<li class="list-group-item">
-									<p><strong>Imagenes para redes sociales:</strong></p>
-                                    <div id="listagaleria">
-										<ul>
-											<li><img class="thumbnail img-admin" src="http://<?php echo $xUrl; ?>/cms/images/meta/<?php echo $xFace1; ?>" /></li>
-                                            <li><img class="thumbnail img-admin" src="http://<?php echo $xUrl; ?>/cms/images/meta/<?php echo $xFace2; ?>" /></li>
-                                        </ul>
-                                    </div>
-								</li>
-								<li class="list-group-item">
-									<p><strong>Favicon:</strong></p>
-									<p><img src="images/meta/<?php echo $xIco; ?>" /></p>
-								</li>
 							</ul>
-                            <a href="metatags-edit.php?cod_meta=<?php echo $xCodigo; ?>" class="btn btn-green"><i class="fa fa-refresh"></i> Editar Metatags</a> 
+                            <a href="logo-edit.php?cod_meta=<?php echo $xCodigo; ?>" class="btn btn-green"><i class="fa fa-refresh"></i> Editar Logotipo</a> 
 							<?php
 								}
 								mysqli_free_result($resultadoMet);
 							?>
 						</div>
                     </div>
+                </div>
+                <div class="fluid">
+                    <div class="widget grid12">
+						<div class="widget-header">
+							<div class="widget-title">
+								<i class="fa fa-th"></i> <strong>Hoja de Vida</strong>
+							</div>
+						</div>
+						<div class="widget-content">
+							<?php
+								$consultarCot = 'SELECT * FROM contacto';
+								$resultadoCot = mysqli_query($enlaces,$consultarCot) or die('Consulta fallida: ' . mysqli_error($enlaces));
+								while($filaCot = mysqli_fetch_array($resultadoCot)){
+									$xCodigo		= $filaCot['cod_contact'];
+									$xCv			= $filaCot['cv'];
+							?>
+							<ul class="list-group">
+								<li class="list-group-item">
+									<p><strong>Su hoja de vida (Se muestra al inicio de la página):</strong></p>
+									<p><a href="archivos/cv/<?php echo $xCv; ?>" target="_blank"><i class="fa fa-search" aria-hidden="true"></i> <?php echo $xCv; ?></a></p>
+								</li>
+							</ul>
+							<a href="cv-edit.php?cod_contact=<?php echo $xCodigo; ?>" class="btn btn-green"><i class="fa fa-refresh"></i> Editar Hoja de Vida</a> 
+							<?php
+								}
+								mysqli_free_result($resultadoCot);
+							?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

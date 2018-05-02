@@ -12,8 +12,8 @@ if($proceso == ""){
 	$ejecutarClientes = mysqli_query($enlaces,$consultaClientes) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	$filaCli = mysqli_fetch_array($ejecutarClientes);
 	$cod_cliente		= $filaCli['cod_cliente'];
-	$nombres 			= htmlspecialchars(utf8_encode($filaCli['nombres']));
-	$direccion			= htmlspecialchars(utf8_encode($filaCli['direccion']));
+	$nombres 			= htmlspecialchars($filaCli['nombres']);
+	$direccion			= htmlspecialchars($filaCli['direccion']);
 	$telefono			= $filaCli['telefono'];
 	$email				= $filaCli['email'];
 	$clave 				= $filaCli['clave'];
@@ -93,15 +93,16 @@ if($proceso=="Actualizar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "clientes"; include("includes/header.php") ?>
+        <?php $menu = "tienda"; $page = "clientes"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Página de Inicio</h1>
 			</div> <!-- /header -->
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Inicio <i class="fa fa-caret-right"></i> clientes <i class="fa fa-caret-right"></i> Editar cliente
+				<i class="fa fa-home"></i> Su tienda <i class="fa fa-caret-right"></i> Clientes <i class="fa fa-caret-right"></i> Editar Cliente
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "clientes"; include("includes/menu-tienda.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -114,7 +115,7 @@ if($proceso=="Actualizar"){
                             	<div class="form-int">
                                 	<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Nombres: *</label>
+	                                        <label><strong>Nombres: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="nombres" type="text" id="nombres" value="<?php echo $nombres; ?>" />
@@ -122,7 +123,7 @@ if($proceso=="Actualizar"){
                                     </div>
                                 	<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Direcci&oacute;n:</label>
+	                                        <label><strong>Direcci&oacute;n:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="direccion" type="text" id="direccion" value="<?php echo $direccion; ?>" />
@@ -130,7 +131,7 @@ if($proceso=="Actualizar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Tel&eacute;fono:</label>
+	                                        <label><strong>Tel&eacute;fono:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="telefono" type="text" id="telefono" value="<?php echo $telefono; ?>" />
@@ -138,7 +139,7 @@ if($proceso=="Actualizar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Email: *</label>
+	                                        <label><strong>Email: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<p><?php echo $email; ?></p>
@@ -148,23 +149,15 @@ if($proceso=="Actualizar"){
                                     <div class="separador-20"></div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Clave: *</label>
+                                            <label><strong>Clave: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="clave" type="password" id="clave" value="<?php echo $clave; ?>" />
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Fecha de Nacimiento:</label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <input name="fecha_nacimiento" type="date" id="fecha_nacimiento" value="<?php echo $fecha_nacimiento; ?>" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Sexo:</label>
+	                                        <label><strong>Sexo:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<div class="custom-input">
@@ -176,7 +169,7 @@ if($proceso=="Actualizar"){
                                     <div class="separador-20"></div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        	<label>Estado:</label>
+                                        	<label><strong>Estado:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<div class="custom-input">

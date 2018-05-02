@@ -93,15 +93,16 @@ if($proceso == "Registrar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "clientes"; include("includes/header.php") ?>
+        <?php $menu = "tienda"; $page = "clientes"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Clientes</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-users"></i> Clientes <i class="fa fa-caret-right"></i> Registrar Cliente
+				<i class="fa fa-home"></i> Su tienda <i class="fa fa-caret-right"></i> Clientes <i class="fa fa-caret-right"></i> Registrar Cliente
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "clientes"; include("includes/menu-tienda.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -115,7 +116,7 @@ if($proceso == "Registrar"){
                             	<div class="form-int">
                                 	<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Nombres: *</label>
+	                                        <label><strong>Nombres: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="nombres" type="text" id="nombres" />
@@ -123,7 +124,7 @@ if($proceso == "Registrar"){
                                     </div>
                                 	<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Direcci&oacute;n: *</label>
+	                                        <label><strong>Direcci&oacute;n: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="direccion" type="text" id="direccion" />
@@ -131,7 +132,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Tel&eacute;fono: *</label>
+	                                        <label><strong>Tel&eacute;fono: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="telefono" type="text" id="telefono" />
@@ -139,7 +140,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Email: *</label>
+	                                        <label><strong>Email: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="email" type="text" id="email" />
@@ -147,7 +148,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Clave: *</label>
+                                            <label><strong>Clave: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="clave" type="password" id="clave" />
@@ -155,7 +156,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Sexo:</label>
+	                                        <label><strong>Sexo:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<div class="custom-input">
@@ -167,7 +168,7 @@ if($proceso == "Registrar"){
                                     <div class="separador-20"></div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        	<label>Estado:</label>
+                                        	<label><strong>Estado:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<div class="custom-input">

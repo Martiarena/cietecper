@@ -69,15 +69,16 @@ if($proceso=="Actualizar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "social"; include("includes/header.php") ?>
+        <?php $menu = "contacto"; $page = "social"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Redes Sociales</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Redes Sociales <i class="fa fa-caret-right"></i> Editar Red Social
+				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Redes Sociales <i class="fa fa-caret-right"></i> Editar Red Social
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "social"; include("includes/menu-contacto.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">

@@ -60,7 +60,7 @@ if($proceso == "Registrar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "contacto"; $page = "enlaces"; include("includes/header.php") ?>
+        <?php $menu = "inicio"; $page = "enlaces"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Datos de Contacto</h1>
@@ -69,7 +69,7 @@ if($proceso == "Registrar"){
 				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Enlaces de Inter&eacute;s <i class="fa fa-caret-right"></i> Nuevo enlace
 			</div>
 			<div class="wrp clearfix">
-            	<?php $page="enlaces"; include("includes/menu-contacto.php"); ?>
+            	<?php $page="enlaces"; include("includes/menu-inicio.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -94,7 +94,7 @@ if($proceso == "Registrar"){
                                             <label><strong>Descripci&oacute;n:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                        	<textarea name="descripcion" id="descripcion"></textarea>
+                                        	<input name="descripcion" type="text" id="descripcion" />
                                         </div>
                                     </div>
                                     <div class="row">

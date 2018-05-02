@@ -45,7 +45,6 @@
 									$xPhone			= utf8_encode($filaCot['phone']);
 									$xMobile		= utf8_encode($filaCot['mobile']);
 									$xEmail			= utf8_encode($filaCot['email']);
-									$xFormem		= utf8_encode($filaCot['form_mail']);
 									$xCv			= $filaCot['cv'];
 							?>
 							<ul class="list-group">
@@ -60,16 +59,6 @@
 								<li class="list-group-item">
 									<p><strong>Celular:</strong></p>
 									<p><?php echo $xMobile; ?></p>
-								</li>
-								<hr>
-								<li class="list-group-item">
-									<p><strong>Su hoja de vida (Se muestra al inicio de la página):</strong></p>
-									<p><a href="archivos/cv/<?php echo $xCv; ?>" target="_blank"><i class="fa fa-search" aria-hidden="true"></i> <?php echo $xCv; ?></a></p>
-								</li>
-								<hr>
-								<li class="list-group-item">
-									<p><strong>Correo que recibe los mensajes del formulario:</strong></p>
-									<p><?php echo $xFormem; ?></p>
 								</li>
 							</ul>
                             <a href="contacto-edit.php?cod_contact=<?php echo $xCodigo; ?>" class="btn btn-green"><i class="fa fa-refresh"></i> Editar Contacto</a>

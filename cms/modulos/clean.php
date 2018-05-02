@@ -45,37 +45,7 @@ foreach($Banners as $filename) {
 	}
 }
 
-$result = mysqli_query($enlaces,"SELECT imagen FROM portafolio") or die('Consulta fallida: ' . mysqli_error($enlaces));
-while($row = mysqli_fetch_assoc($result)) {
-   $do_not_delete[] = "images/portafolio/".$row['imagen'];
-}
-
-$directory = "images/portafolio/";
-$Portafolio = glob($directory."*");
-foreach($Portafolio as $filename) {
-    if (!in_array($filename, $do_not_delete)){
-		if (strpos($filename,".")){
-			unlink($filename);
-		}
-	}
-}
-
-$result = mysqli_query($enlaces,"SELECT imagen FROM portafolio_galerias") or die('Consulta fallida: ' . mysqli_error($enlaces));
-while($row = mysqli_fetch_assoc($result)) {
-   $do_not_delete[] = "images/portafolio/galeria/".$row['imagen'];
-}
-
-$directory = "images/portafolio/galeria/";
-$PortafolioGaleria = glob($directory."*");
-foreach($PortafolioGaleria as $filename) {
-    if (!in_array($filename, $do_not_delete)){
-		if (strpos($filename,".")){
-			unlink($filename);
-		}
-	}
-}
-
-$result = mysqli_query($enlaces,"SELECT imagen FROM productos") or die('Consulta fallida: ' . mysqli_error($enlaces));
+$result = mysqli_query($enlaces,"SELECT imagen FROM cursos") or die('Consulta fallida: ' . mysqli_error($enlaces));
 while($row = mysqli_fetch_assoc($result)) {
    $do_not_delete[] = "images/productos/".$row['imagen'];
 }
@@ -91,7 +61,7 @@ foreach($Productos as $filename) {
 }
 
 
-$result = mysqli_query($enlaces,"SELECT ficha_tecnica FROM productos") or die('Consulta fallida: ' . mysqli_error($enlaces));
+$result = mysqli_query($enlaces,"SELECT ficha_tecnica FROM cursos") or die('Consulta fallida: ' . mysqli_error($enlaces));
 while($row = mysqli_fetch_assoc($result)) {
    $do_not_delete[] = "archivos/".$row['ficha_tecnica'];
 }

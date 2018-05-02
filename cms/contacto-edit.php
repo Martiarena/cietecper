@@ -15,8 +15,6 @@ if($proceso==""){
 	$xPhone 		= htmlspecialchars(utf8_encode($filaCot['phone']));
 	$xMobile 		= htmlspecialchars(utf8_encode($filaCot['mobile']));
 	$xEmail 		= htmlspecialchars(utf8_encode($filaCot['email']));
-	$xFormem 		= htmlspecialchars(utf8_encode($filaCot['form_mail']));
-	$xCv 			= $filaCot['cv'];
 }
 
 if($proceso == "Actualizar"){
@@ -24,10 +22,8 @@ if($proceso == "Actualizar"){
 	$phone			= mysqli_real_escape_string($enlaces, utf8_decode($_POST['phone']));
 	$mobile			= mysqli_real_escape_string($enlaces, utf8_decode($_POST['mobile']));
 	$email			= mysqli_real_escape_string($enlaces, utf8_decode($_POST['email']));
-	$formem			= mysqli_real_escape_string($enlaces, utf8_decode($_POST['form_mail']));
-	$cv				= $_POST['cv'];
 
-	$ActualizarContact = "UPDATE contacto SET cod_contact='$cod_contact', phone='$phone', mobile='$mobile', email='$email', form_mail='$formem', cv='$cv' WHERE cod_contact='$cod_contact'";
+	$ActualizarContact = "UPDATE contacto SET cod_contact='$cod_contact', phone='$phone', mobile='$mobile', email='$email' WHERE cod_contact='$cod_contact'";
 	$resultadoActualizar = mysqli_query($enlaces,$ActualizarContact);
 	header("Location:contacto.php");
 }
@@ -39,16 +35,6 @@ if($proceso == "Actualizar"){
 	<script type="text/javascript" src="js/rutinas.js"></script>
     <script>
 		function Validar(){
-			if(document.fcms.form_mail.value==""){
-				alert("¡El correo para los mensajes del formulario es obligatorio!");
-				document.fcms.form_mail.focus();
-				return;	
-			}
-			if (document.fcms.form_mail.value.indexOf('@') == -1){
-				alert ("La \"dirección de email\" no es correcta");
-				document.fcms.form_mail.focus();
-				return;
-			}
 			document.fcms.action = "contacto-edit.php";
 			document.fcms.proceso.value="Actualizar";
 			document.fcms.submit();
@@ -110,29 +96,6 @@ if($proceso == "Actualizar"){
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input type="text" name="mobile" value="<?php echo $xMobile; ?>" />
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        	<label><strong>Hoja de vida:</strong><br><span>(Formato: pdf)</span></label>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        	<?php if($xVisitante=="Si"){ ?><p><?php echo $xCv; ?></p><?php } ?>
-                                            <input name="cv" type="<?php if($xVisitante=="Si"){ ?>hidden<?php }else{ ?>text<?php } ?>" value="<?php echo $xCv; ?>" />
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <?php if($xVisitante=="No"){ ?><button class="btn btn-red" type="button" name="boton4" onClick="javascript:Imagen('CV');" /><i class="fa fa-save"></i> Examinar</button><?php } ?>
-                                        </div>
-                                   	</div>
-                                    <hr>
-                                    <div class="row">
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label><strong>Correo que recibe los mensajes del Formulario: *</strong></label>
-                                        </div>
-                                    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        	<?php if($xVisitante=="Si"){ ?><p><?php echo $xFormem; ?></p><?php } ?>
-                                            <input type="<?php if($xVisitante=="Si"){ ?>hidden<?php }else{ ?>text<?php } ?>" name="form_mail" value="<?php echo $xFormem; ?>" />
                                         </div>
                                     </div>
                                     <div class="separador-20"></div>

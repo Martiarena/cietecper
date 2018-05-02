@@ -185,10 +185,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right menu-effect">
+					<li class="<?php echo ($page == "inicio" ? "current" : "")?>"><a href="inicio.php" data-hover="Inicio">Inicio</a></li>
 					<li class="<?php echo ($page == "articulos" ? "current" : "")?>"><a href="articulos.php" data-hover="Art&iacute;culos">Art&iacute;culos</a></li>
 					<li><a href="#" data-hover="Asesor&iacute;a&nbsp;y&nbsp;consultor&iacute;a">Asesor&iacute;a y consultor&iacute;a</a></li>
 					<li><a href="cursos.php" data-hover="Cursos">Cursos</a></li>
-					<li class="<?php echo ($page == "contacto" ? "current" : "")?>"><a href="contacto.php" data-hover="Contacto">Contacto</a></li>
 				</ul>
 			</div>
 		</nav>

@@ -55,20 +55,21 @@ if($proceso == "Actualizar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php include("includes/header.php"); ?>
+        <?php $menu = "tienda"; $page = "pedidos"; include("includes/header.php"); ?>
 		<div id="content" class="clearfix">
 			<div class="header">
 				<h1 class="page-title">Pedidos</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-shopping-cart"></i> Pedidos
+				<i class="fa fa-home"></i> Su tienda <i class="fa fa-caret-right"></i> Pedidos <i class="fa fa-caret-right"></i> Correo
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "pedidos"; include("includes/menu-tienda.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
 							<div class="widget-title">
-								<i class="fa fa-th"></i> <strong>Editar Correo para Pedidos</strong>
+								<i class="fa fa-th"></i> <strong>Editar correo que recibe los pedidos</strong>
 							</div>
 						</div>
 						<div class="widget-content">
@@ -76,7 +77,7 @@ if($proceso == "Actualizar"){
                             	<div class="form-int">
                                     <div class="row">
 										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Correo que recibe los pedidos: *</label>
+                                            <label><strong>Correo que recibe los pedidos: *</strong></label>
                                         </div>
                                     	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input type="text" name="cart_mail" value="<?php echo $xCartem; ?>" />

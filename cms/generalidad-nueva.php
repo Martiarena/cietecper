@@ -80,7 +80,7 @@ if($proceso == "Registrar"){
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <label><strong>T&iacute;tulo: *</strong></label>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <input name="titulo" type="text" id="titulo" />
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@ if($proceso == "Registrar"){
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <label><strong>Descripci&oacute;n:</strong></label>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<textarea name="descripcion" id="descripcion"></textarea>
                                             <script>
 												CKEDITOR.replace('descripcion');

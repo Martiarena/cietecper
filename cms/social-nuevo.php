@@ -61,15 +61,16 @@ if($proceso == "Registrar"){
 		</div>
 	</div>
 	<div id="wrapper">
-        <?php $menu = "social"; include("includes/header.php") ?>
+        <?php $menu = "contacto"; $page = "social"; include("includes/header.php") ?>
 		<div id="content" class="clearfix">
 	        <div class="header">
 				<h1 class="page-title">Redes Sociales</h1>
 			</div>
 			<div class="breadcrumbs">
-				<i class="fa fa-home"></i> Redes Sociales <i class="fa fa-caret-right"></i> A&ntilde;adir Red Social
+				<i class="fa fa-home"></i> Contacto <i class="fa fa-caret-right"></i> Redes Sociales <i class="fa fa-caret-right"></i> A&ntilde;adir Red Social
 			</div>
 			<div class="wrp clearfix">
+				<?php $page = "social"; include("includes/menu-contacto.php"); ?>
                 <div class="fluid">
 					<div class="widget grid12">
 						<div class="widget-header">
@@ -83,7 +84,7 @@ if($proceso == "Registrar"){
                             	<div class="form-int">
                                 	<div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <label>Bot&oacute;n de Red Social:</label>
+                                            <label><strong>Bot&oacute;n de Red Social:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<div class="dropdown">

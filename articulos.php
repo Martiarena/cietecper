@@ -61,9 +61,9 @@
 								<div class="item">
 									<div class="mb-thumb">
 										<?php if($xImagen!=""){ ?>
-											<img src="cms/images/articulos/<?php echo $xImagen; ?>" class="img-responsive" alt=""/>
+											<img src="cms/images/articulos/<?php echo $xImagen; ?>" class="img-responsive img-articulo" alt=""/>
 	            						<?php }else{ ?>
-											<img src="cms/images/noticia.jpg" class="img-responsive" alt=""/>
+											<img src="cms/images/noticia.jpg" class="img-responsive img-articulo" alt=""/>
 			            				<?php } ?>
 										<div class="date">
 											<?php $day = date('d', strtotime($xFecha)); 
