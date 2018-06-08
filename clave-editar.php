@@ -114,7 +114,7 @@ if($proceso=="Actualizar"){
 <!-- Outer-wrap -->
 <div class="outer-wrap">
 	<div class="container">
-		<?php $page = "articulos"; include("includes/menu.php"); ?>
+		<?php include("includes/menu.php"); ?>
 		<!-- Right Main Content -->
 		<div class="col-md-9 m-right">
 			<!-- Page Header -->
@@ -147,13 +147,17 @@ if($proceso=="Actualizar"){
 											<?php echo $email; ?>
 										</div>
 			                        </div>
+			                        <div class="clearfix" style="height:10px;"></div>
 			                        <div class="row">
-			                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><label><strong>Clave: </strong></label></div>
+			                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			                            	<label><strong>Clave: </strong></label>
+			                            </div>
 			                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 			                            	<input class="form-control" type="password" name="clave" value="<?php echo $clave; ?>">
 											<div class="clearfix" style="height:10px;"></div>
 										</div>
 			                        </div>
+			                        <div class="clearfix" style="height:10px;"></div>
 			                        <div class="row">
 			                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<label><p><strong>Nota: </strong> La clave cambiada ser&aacute; enviada al correo registrado.</p></label>
@@ -162,8 +166,7 @@ if($proceso=="Actualizar"){
 			                        <div class="row">
 			                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			                                <p class="linea">
-												<a href="perfil.php" class="btn btn-default">&laquo; Volver</a>
-			                                    <input type="button" value="Cambiar Clave" class="btn btn-danger" onClick="javasript:Validar();">
+												<input type="button" value="Cambiar Clave" class="btn_green_1" onClick="javasript:Validar();">
 			                                </p>
 			                            </div>
 			                            <input type="hidden" name="cod_cliente" value="<?php echo $cod_cliente; ?>">

@@ -158,7 +158,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 text-login">
 				<?php if($xAlias!=""){ ?>
-				<p><span><i class="fa fa-user"></i> <a href="perfil.php"><strong>Perfil</strong></a></span> | <span><a href="carro.php"><i class="fa fa-shopping-cart"></i> (99)</a></span> | <span><a href="cerrar-sesion.php"><i class="fa fa-power-off"></i> Salir</a></span></p>
+				<p><span><i class="fa fa-user"></i> <a href="perfil.php"><strong>Perfil</strong></a></span> | <span><a href="carrito-compras.php"><i class="fa fa-shopping-cart"></i> Ver Compras</a></span> | <span><a href="cerrar-sesion.php"><i class="fa fa-power-off"></i> Salir</a></span></p>
 				<?php }else{ ?>
 				<p><span><i class="fa fa-user"></i> <a id="fadePopup" href="#">Login</a></span> | <span><i class="fa fa-plus-circle"></i> <a id="fadePopup1" href="#">Registro</a></span></p>
 				<?php } ?>
@@ -185,10 +185,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right menu-effect">
-					<li class="<?php echo ($page == "inicio" ? "current" : "")?>"><a href="inicio.php" data-hover="Inicio">Inicio</a></li>
+					<li class="<?php echo ($page == "inicio" ? "current" : "")?>"><a href="index.php" data-hover="Inicio">Inicio</a></li>
 					<li class="<?php echo ($page == "articulos" ? "current" : "")?>"><a href="articulos.php" data-hover="Art&iacute;culos">Art&iacute;culos</a></li>
-					<li><a href="#" data-hover="Asesor&iacute;a&nbsp;y&nbsp;consultor&iacute;a">Asesor&iacute;a y consultor&iacute;a</a></li>
-					<li><a href="cursos.php" data-hover="Cursos">Cursos</a></li>
+					<li class="<?php echo ($page == "asesoria" ? "current" : "")?>"><a href="#" data-hover="Asesor&iacute;a&nbsp;y&nbsp;consultor&iacute;a">Asesor&iacute;a y consultor&iacute;a</a></li>
+					<li class="<?php echo ($page == "cursos" ? "current" : "")?>"><a href="cursos.php" data-hover="Cursos">Cursos</a></li>
 				</ul>
 			</div>
 		</nav>

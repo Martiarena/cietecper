@@ -15,7 +15,6 @@ if($proceso == ""){
 	$cod_curso			= $filaCur['cod_curso'];
 	$titulo				= htmlspecialchars($filaCur['titulo']);
 	$descripcion		= htmlspecialchars($filaCur['descripcion']);
-	$precio_desc		= substr($filaCur['precio_desc'],0,20);
 	$precio_normal		= substr($filaCur['precio_normal'],0,20);
 	$imagen				= $filaCur['imagen'];
 	$ficha_tecnica		= $filaCur['ficha_tecnica'];
@@ -25,8 +24,7 @@ if($proceso == ""){
 if($proceso == "Actualizar"){
 	$titulo				= mysqli_real_escape_string($enlaces,$_POST['titulo']);
 	$descripcion		= mysqli_real_escape_string($enlaces,$_POST['descripcion']);
-	$precio_desc		= substr(utf8_decode($_POST['precio_desc']),0,20);
-	$precio_normal		= substr(utf8_decode($_POST['precio_normal']),0,20);
+	$precio_normal		= substr($_POST['precio_normal'],0,20);
 	$imagen				= $_POST['imagen'];
 	$ficha_tecnica		= $_POST['ficha_tecnica'];
 	$orden				= $_POST['orden'];
@@ -37,7 +35,6 @@ if($proceso == "Actualizar"){
 		cod_curso='$cod_curso', 
 		titulo='$titulo', 
 		descripcion='$descripcion', 
-		precio_desc='$precio_desc', 
 		precio_normal='$precio_normal', 
 		imagen='$imagen', 
 		ficha_tecnica='$ficha_tecnica', 
@@ -117,7 +114,7 @@ if($proceso == "Actualizar"){
                             	<div class="form-int">
                                 	<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-											<label>T&iacute;tulo del Curso: *</label>
+											<label><strong>T&iacute;tulo del Curso: *</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="titulo" type="text" value="<?php echo $titulo; ?>" />
@@ -125,7 +122,7 @@ if($proceso == "Actualizar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-											<label>Descripci&oacute;n:</label>
+											<label><strong>Descripci&oacute;n:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<textarea name="descripcion" /><?php echo $descripcion ?></textarea>
@@ -137,23 +134,15 @@ if($proceso == "Actualizar"){
                                     <div class="separador-20"></div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-											<label>Precio Oferta:</label>
+											<label><strong>Precio Normal:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <input name="precio_desc" type="text" id="precio_desc" value="<?php echo $precio_desc; ?>" />
+                                            <input name="precio_normal" type="text" id="precio_normal" value="<?php echo number_format($precio_normal,2); ?>" />
                                         </div>
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-											<label>Precio Normal:</label>
-                                        </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <input name="precio_normal" type="text" id="precio_normal" value="<?php echo $precio_normal; ?>" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-											<label>Imagen *<br><span>(-px x -px)</span>:</label>
+											<label><strong>Imagen *</strong><br><span>(-px x -px)</span>:</label>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         	<?php if($xVisitante=="Si"){ ?><p><?php echo $imagen; ?></p><?php } ?>
@@ -168,7 +157,7 @@ if($proceso == "Actualizar"){
                                     <div class="separador-20"></div>
 									<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-											<label>Ficha T&eacute;cnica:<br><span>(Formato .pdf)</span></label>
+											<label><strong>Ficha T&eacute;cnica:</strong><br><span>(Formato .pdf)</span></label>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         	<?php if($xVisitante=="Si"){ ?><p><?php echo $ficha_tecnica; ?></p><?php } ?>
@@ -183,7 +172,7 @@ if($proceso == "Actualizar"){
                                     <div class="separador-20"></div>
                 					<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        	<label>Orden: *</label>
+                                        	<label><strong>Orden: *</strong></label>
                                         </div>
                                         <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12">
                                         	<input name="orden" type="text" onKeyPress="return soloNumeros(event)" value="<?php echo $orden; ?>" />
@@ -191,7 +180,7 @@ if($proceso == "Actualizar"){
                                     </div>
                 					<div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                        	<label>Estado:</label>
+                                        	<label><strong>Estado:</strong></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                             <div class="custom-input">

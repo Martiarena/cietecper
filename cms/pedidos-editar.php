@@ -1,11 +1,11 @@
 <?php include "modulos/conexion.php"; ?>
 <?php include "modulos/verificar.php"; ?>
 <?php
-$codorden = $_REQUEST['codorden'];
-$clientes = "SELECT * FROM pedidos as p, clientes as c WHERE p.cod_orden='$codorden' AND p.cod_cliente=c.cod_cliente";
+$cod_orden = $_REQUEST['cod_orden'];
+$clientes = "SELECT * FROM pedidos as p, clientes as c WHERE p.cod_orden='$cod_orden' AND p.cod_cliente=c.cod_cliente";
 $resultadoC = mysqli_query($enlaces, $clientes);
 $filacli = mysqli_fetch_array($resultadoC);
-$codigoorden 	= $filacli['cod_orden'];
+$codorden 		= $filacli['cod_orden'];
 $nombres 		= $filacli['nombres'];
 $direccion 		= $filacli['direccion'];
 $telefono 		= $filacli['telefono'];
@@ -50,7 +50,7 @@ $observaciones	= utf8_encode($filacli['observaciones']);
 						<div class="widget-content">
 							<form name="fcms" method="post" action="">
 								<div class="grid12">
-									<p><strong>Nº de Orden de Compra : </strong><?php echo $codigoorden; ?></p>
+									<p><strong>Nº de Orden de Compra : </strong><?php echo $codorden; ?></p>
 									<table width="100%" border="0" cellspacing="0" cellpadding="0" class="borde-tablas">
 										<tr>
 											<th width="5%" scope="col">Nº</th>
@@ -60,11 +60,11 @@ $observaciones	= utf8_encode($filacli['observaciones']);
 											<th width="20%" scope="col">Total</th>
 										</tr>
 										<?php
-											$detalles = "SELECT * FROM pedidodetalle as d, productos as p WHERE d.cod_orden='$codorden' AND d.cod_producto=p.cod_producto";
+											$detalles = "SELECT * FROM pedidodetalle as d, cursos as p WHERE d.cod_orden='$codorden' AND d.cod_curso=p.cod_curso";
 											$resultade = mysqli_query($enlaces,$detalles);
 											while($filaDetalle = mysqli_fetch_array($resultade)){
 												$xCodOrden 		= $filaDetalle['cod_orden'];
-												$xNomPro 		= $filaDetalle['nom_producto'];
+												$xNomPro 		= $filaDetalle['titulo'];
 												$xCantidad	 	= $filaDetalle['cantidad'];
 												$xPrecio 		= $filaDetalle['precio'];
 												$xTotal			= ($xCantidad*$xPrecio);

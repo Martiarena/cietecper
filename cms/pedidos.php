@@ -91,7 +91,7 @@
 					            	    <td><?php echo $xNombres; ?></td>
 					            	    <td><?php echo $xFechaPedido; ?></td>
 					            	    <td><?php echo number_format($xTotal,2); ?></td>
-					            	    <td><a class="boton-nuevo" href="pedidos-editar.php?codorden=<?php echo $xCodOrden; ?>"><i class="fa fa-search"></i></a></td>
+					            	    <td><a class="boton-nuevo" href="pedidos-editar.php?cod_orden=<?php echo $xCodOrden; ?>"><i class="fa fa-search"></i></a></td>
                                     </tr>
                                     <?php
                                         }

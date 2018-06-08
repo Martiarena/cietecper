@@ -10,7 +10,7 @@ if($proceso == "iniciar"){
 	while($fila=mysqli_fetch_array($resultado)){
 		$xCodCliente = $fila['cod_cliente'];
 		$xAlias = utf8_encode($fila['nombres']);
-		$xEmail = $fila['email'];
+		$xEmailc = $fila['email'];
 	}
 	$contador = mysqli_num_rows($resultado);
 	mysqli_free_result($resultado);
@@ -19,7 +19,7 @@ if($proceso == "iniciar"){
 		session_start();
 		$_SESSION['xCodCliente'] = $xCodCliente;
 		$_SESSION['xAlias_c'] = $xAlias;
-		$_SESSION['xEmail_c'] = $xEmail;
+		$_SESSION['xEmail_c'] = $xEmailc;
 		header("Location:bienvenida-cliente.php");
 	}else{
 		header("Location:seguridad.php");

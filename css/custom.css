@@ -515,8 +515,66 @@ h3.titulo {
   color: #000;
 }
 
+ul{
+  margin-left: 20px;
+}
 
+.texto-curso p {
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+  font-weight: normal !important;
+  font-size: inherit !important;
+  line-height: 1.5 !important;
+}
 
+.texto-curso ul {
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
+
+#m-curso-content {
+    padding: 30px;
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.page-nav {
+  border-top: 0px none;
+}
+
+.pw-inner h4 {
+    height: 36px;
+}
+
+.pw-inner ul li .btn-carrito-mas {
+  color: #000;
+  width: 35px;
+  height: 35px;
+  padding: 7px 9px;
+  text-align: center;
+  font-size: 14px;
+  display: table;
+  border: 1px solid #000;
+  transform: rotate(45deg);
+  background: transparent;
+}
+
+.pw-inner ul li .btn-carrito-mas:hover {
+  color: #000 !important;
+  border: 1px solid #fff;
+  background: #fff;
+}
+
+.product-wrap:hover .pw-inner ul .btn-carrito-mas {
+  color: #fff;
+  border-color: #fff;
+  transition: 0.3s;
+}
+
+.pw-inner ul li .btn-carrito-mas span {
+    transform: rotate(-45deg);
+    display: table;
+}
 
 @media only screen and (max-width:1199px){
   .navbar-brand {
@@ -534,7 +592,17 @@ h3.titulo {
     height: auto;
     width: auto;
   }
+  .pw-inner h4 {
+    height: auto;
+  }
 }
+
+#m-carrito-content {
+  padding: 30px;
+  margin-bottom: 30px;
+  background: #fff;
+}
+
 @media only screen and (max-width:991px){
   .contact-info ul li {
     float: left;

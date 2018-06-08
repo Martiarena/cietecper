@@ -11,4 +11,3 @@ if (isset($_SESSION['xEmail_c'])) {
 	$xEmail 	= "";
 }
 ?>
-

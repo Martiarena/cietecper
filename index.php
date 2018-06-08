@@ -6,9 +6,20 @@
 <!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <head>
 	<?php include "includes/head.php"; ?>
+	<script>
+		function Agregar(){
+			document.fcarrito.action="verificar.php";
+			valor=document.fcarrito.cantidad.value;
+			if(isNaN(valor)||(valor=="")||(valor==0)){
+				alert("Insertar una cantidad valida");
+				return;
+			}
+			document.fcarrito.submit();
+		}
+	</script>
 </head>
 <body id="page-top">
-<!-- Outer-wrap -->
+	<!-- Outer-wrap -->
 	<div class="outer-wrap">
 		<div class="container">
 			<?php $page = "inicio"; include "includes/menu.php"; ?>
@@ -176,14 +187,18 @@
 				                ?>
 								<div class="col-md-4">
 									<div class="product-wrap">
-										<div class="pw-price">S/. <?php echo $xPrecio_normal; ?></div>
+										<div class="pw-price">S/. <?php echo number_format($xPrecio_normal,2); ?></div>
 										<img src="cms/images/productos/<?php echo $xImagen; ?>" class="img-responsive img_curso" alt=""/>
 										<div class="pw-inner">
 											<h4><?php echo $xTitulo; ?></h4>
 											<ul>
 												<li><a href="curso.php?cod_curso=<?php echo $xCodigo; ?>"><span><i class="fa fa-search"></i></span></a></li>
 												<?php if($xAlias!=""){ ?>
-												<li><a href="#"><span><i class="fa fa-shopping-cart"></i></span></a></li>
+												<li><form name="fcarrito<?php echo $xCodigo; ?>" action="verificar.php" method="post">
+													<input type="hidden" name="cod_curso" id="cod_curso" value="<?php echo $xCodigo; ?>" />
+													<input type="hidden" name="cantidad" id="cantidad" value="1" />
+                            						<button class="btn-carrito-mas" type="input"><span><i class="fa fa-shopping-cart"></i></span></button>
+												</form></li>
 												<?php } ?>
 											</ul>
 										</div>

@@ -25,7 +25,7 @@ $sexo				= $filaCli['sexo'];
 <!-- Outer-wrap -->
 <div class="outer-wrap">
 	<div class="container">
-		<?php $page = "articulos"; include("includes/menu.php"); ?>
+		<?php include("includes/menu.php"); ?>
 		<!-- Right Main Content -->
 		<div class="col-md-9 m-right">
 			<!-- Page Header -->
